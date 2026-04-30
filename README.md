@@ -213,10 +213,12 @@ Frontend hot reload and contributor-focused local development notes live in [.gi
 
 ## Contributing & Support
 
-Contribution workflow and local development notes live in [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md).
-Use GitHub `Issues` for clear bugs, feature requests, and concrete documentation fixes.
-Use `Discussions` when you have a question, need help deciding direction, or are not sure whether something should become an issue yet.
-If the situation feels ambiguous, start with a Discussion first.
+We welcome contributions of all sizes, including bug fixes, documentation improvements, and small UX polish.
+Please start with [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) for local setup and contribution guidelines.
+
+Open a GitHub `Issue` for bugs, feature requests, or larger changes you want to discuss first.
+Open a `Pull Request` for focused fixes, documentation updates, or well-scoped improvements.
+Use `Discussions` for questions, early ideas, or anything still exploratory.
 
 ## License
 

@@ -214,10 +214,12 @@ python3 server.py
 
 ## 기여 및 지원
 
-기여 절차와 로컬 개발 안내는 [.github/CONTRIBUTING-KR.md](.github/CONTRIBUTING-KR.md)를 확인해 주세요.
-고쳐야 할 버그, 기능 요청, 문서 수정처럼 범위가 분명한 내용은 GitHub `Issues`를 사용해 주세요.
-질문이 있거나, 방향을 함께 정하고 싶거나, 아직 이슈로 만들 만큼 명확하지 않다면 `Discussions`로 시작하는 편이 좋습니다.
-판단이 애매하면 먼저 Discussion에 남겨 주셔도 괜찮습니다.
+버그 수정, 문서 개선, 작은 UX 다듬기까지 어떤 크기의 기여든 환영합니다.
+로컬 실행 방법과 기여 절차는 [.github/CONTRIBUTING-KR.md](.github/CONTRIBUTING-KR.md)에서 먼저 확인해 주세요.
+
+버그, 기능 요청, 또는 먼저 논의가 필요한 비교적 큰 변경은 GitHub `Issues`로 열어 주세요.
+범위가 명확한 수정, 문서 업데이트, 잘게 나뉜 개선은 바로 `Pull Request`로 보내 주셔도 좋습니다.
+질문, 초기 아이디어, 아직 방향을 함께 잡아야 하는 내용은 `Discussions`를 사용해 주세요.
 
 ## 라이선스
 
