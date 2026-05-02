@@ -1,4 +1,4 @@
-# SnapDoc
+# ViewerSaver
 
 > 로컬 환경에서 브라우저 전용 문서를 PDF로 저장하는 도구입니다. 공개 데모는 UI 미리보기용이며, 실제 캡처는 Playwright 기반 로컬 실행이 필요합니다.
 
@@ -11,24 +11,32 @@
 
 ## 개요
 
-SnapDoc은 Canva, 슬라이드 뷰어처럼 브라우저 안에서만 접근 가능한 문서를 로컬 PC에서 PDF로 저장할 수 있게 도와줍니다. 실제 캡처는 로컬 Playwright 실행을 기준으로 설계되어 있고, 공개 데모는 전체 런타임을 노출하지 않고 인터페이스만 확인할 수 있도록 분리되어 있습니다.
+ViewerSaver는 Canva, 슬라이드 뷰어처럼 브라우저 안에서만 접근 가능한 문서를 로컬 PC에서 PDF로 저장할 수 있게 도와줍니다. 실제 캡처는 로컬 Playwright 실행을 기준으로 설계되어 있고, 공개 데모는 전체 런타임을 노출하지 않고 인터페이스만 확인할 수 있도록 분리되어 있습니다.
+
+> 브랜딩 안내: 현재 공식 제품명은 `ViewerSaver`입니다. 전환 작업이 완전히 끝날 때까지 예전 명칭인 `SnapDoc`이 일부 링크, 데모 화면, 진행 중인 브랜딩 요소에 남아 있을 수 있습니다.
 
 현재 제한 사항:
 - 브라우저 자동화가 필요하므로 클라우드 전용 배포에서는 실제 캡처를 지원하지 않습니다.
 - 기본 사용 흐름은 로컬 실행 기준으로 설계되어 있습니다.
 - Windows를 주 개발 환경으로 두고 있으며, macOS와 Linux는 best-effort 지원입니다.
 
+## 라이브 데모
+
+- Try it online: [https://snapdoc-demo.vercel.app](https://snapdoc-demo.vercel.app)
+- 저장소: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
+- 참고: 배포된 데모는 mocked response 기반 UI 미리보기용입니다.
+
 ## 동작 방식
 
-1. SnapDoc이 Playwright Chromium으로 대상 문서를 로컬에서 엽니다.
+1. ViewerSaver가 Playwright Chromium으로 대상 문서를 로컬에서 엽니다.
 2. 페이지를 캡처한 뒤 미리보기와 오류 검토 단계를 통해 문제가 있는 페이지를 확인합니다.
 3. 검토 또는 교체가 끝난 결과를 최종 PDF로 묶어 저장합니다.
 
-## 라이브 데모
+[readme-1.webm](https://github.com/user-attachments/assets/5aecbed8-7cfb-49fd-9efd-f4a23380a2f0)
 
-- Live Demo: [https://snapdoc-demo.vercel.app](https://snapdoc-demo.vercel.app)
-- 저장소: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
-- 참고: 배포된 데모는 mocked response 기반 UI 미리보기용입니다.
+[readme-2.webm](https://github.com/user-attachments/assets/2214ba6f-6fa3-41fe-b7e3-9dd2f11e2bc5)
+
+<br>
 
 ## 요구 사항
 

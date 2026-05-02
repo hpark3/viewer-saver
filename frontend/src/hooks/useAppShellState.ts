@@ -13,6 +13,7 @@ const defaultModalConfig: ModalConfig = {
 };
 
 export const useAppShellState = () => {
+  const themeStorageKey = 'viewersaver-theme-v2';
   const [stage, setStage] = useState<Stage>(0);
   const [prevStage, setPrevStage] = useState<Stage>(0);
   const [direction, setDirection] = useState(0);
@@ -20,8 +21,8 @@ export const useAppShellState = () => {
   const [isGridViewOpen, setIsGridViewOpen] = useState(false);
   const [modalConfig, setModalConfig] = useState<ModalConfig>(defaultModalConfig);
   const [theme, setTheme] = useState<AppTheme>(() => {
-    const saved = localStorage.getItem('app-theme');
-    return (saved as AppTheme) || 'pastel';
+    const saved = localStorage.getItem(themeStorageKey);
+    return (saved as AppTheme) || 'light';
   });
   const [lang, setLang] = useState<Lang>('en');
   const langRef = useRef<Lang>('en');
@@ -64,8 +65,8 @@ export const useAppShellState = () => {
   }, [stage]);
 
   useEffect(() => {
-    localStorage.setItem('app-theme', theme);
-  }, [theme]);
+    localStorage.setItem(themeStorageKey, theme);
+  }, [theme, themeStorageKey]);
 
   useEffect(() => {
     langRef.current = lang;
