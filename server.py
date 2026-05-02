@@ -393,23 +393,6 @@ def cleanup_stale_output_on_startup():
     cleanup_output_directories_for_new_run()
     reset_output_references()
 
-
-
-def clear_temp_files_for_new_run() -> tuple[int, int]:
-    """Clear temp capture files while keeping the temp directory itself."""
-    TEMP_DIR.mkdir(parents=True, exist_ok=True)
-    deleted_count = 0
-    failed_count = 0
-    for entry in TEMP_DIR.iterdir():
-        if entry.is_file() or entry.is_symlink():
-            try:
-                entry.unlink()
-                deleted_count += 1
-            except Exception:
-                failed_count += 1
-    return deleted_count, failed_count
-
-
 def clear_manual_capture_temp_pngs() -> tuple[int, int]:
     """Remove only manual-upload temp PNG files before automatic recapture."""
     TEMP_DIR.mkdir(parents=True, exist_ok=True)
