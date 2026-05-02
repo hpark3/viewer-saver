@@ -31,9 +31,9 @@ Current limits:
 2. The app surfaces preview and error-review steps so you can check failed or suspicious pages.
 3. Final output is assembled into a PDF for download after review or replacement.
 
-[readme-1.webm](https://github.com/user-attachments/assets/5aecbed8-7cfb-49fd-9efd-f4a23380a2f0)
+[readme-1.webm](https://github.com/user-attachments/assets/09d76978-0d0d-4faa-b184-6237484f5e4f)
 
-[readme-2.webm](https://github.com/user-attachments/assets/2214ba6f-6fa3-41fe-b7e3-9dd2f11e2bc5)
+[readme-2.webm](https://github.com/user-attachments/assets/b02c7fcc-010d-426f-ad84-0f116e1b0678)
 
 <br>
 
