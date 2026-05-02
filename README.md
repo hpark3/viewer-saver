@@ -1,4 +1,4 @@
-# SnapDoc
+# ViewerSaver
 
 > Browser-only document capture for local use.
 
@@ -11,23 +11,31 @@ English | [한국어 README](README-KR.md)
 
 ## Overview
 
-SnapDoc saves browser-only documents such as Canva and slide viewers to PDF on your own machine.
+ViewerSaver saves browser-only documents such as Canva and slide viewers to PDF on your own machine.
+
+> Branding note: `ViewerSaver` is the current official product name. `SnapDoc` may still appear in older links, demo surfaces, or in-progress branding updates while the transition is being completed.
 
 Current limits:
 - Real capture is not supported in cloud-only deployment because browser automation is required.
 - The main workflow is designed for local execution.
 - Windows is the primary development environment; macOS and Linux are best-effort.
 
+## Live Demo
+
+- Try it online: [https://snapdoc-demo.vercel.app](https://snapdoc-demo.vercel.app)
+- Repository: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
+
 ## How It Works
 
-1. SnapDoc opens the target document in Playwright Chromium and captures pages locally.
+1. ViewerSaver opens the target document in Playwright Chromium and captures pages locally.
 2. The app surfaces preview and error-review steps so you can check failed or suspicious pages.
 3. Final output is assembled into a PDF for download after review or replacement.
 
-## Live Demo
+[readme-1.webm](https://github.com/user-attachments/assets/5aecbed8-7cfb-49fd-9efd-f4a23380a2f0)
 
-- Live Demo: [https://snapdoc-demo.vercel.app](https://snapdoc-demo.vercel.app)
-- Repository: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
+[readme-2.webm](https://github.com/user-attachments/assets/2214ba6f-6fa3-41fe-b7e3-9dd2f11e2bc5)
+
+<br>
 
 ## Requirements
 

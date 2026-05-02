@@ -53,13 +53,19 @@ const useIsMobilePreview = () => {
 
 const RenderStage8 = ({ previewBlobUrl, totalPages, isPreviewLoading, previewError, copy, errorPages, theme, lang, isSaved, getPreviewLoadFailedMessage, transitionTo, handleFinalSave, setIsGridViewOpen }: any) => {
   const isMobilePreview = useIsMobilePreview();
+  const isIOS = typeof window !== 'undefined' && /iPhone|iPad|iPod/i.test(window.navigator.userAgent);
   const openDocumentLabel = lang === 'ko' ? '\ubb38\uc11c \uc5f4\uae30' : 'Open document';
-  const mobileCardTitle = lang === 'ko'
-    ? '\ubaa8\ubc14\uc77c\uc5d0\uc11c\ub294 \uc0c8 \ud0ed\uc73c\ub85c \ubb38\uc11c\ub97c \ud655\uc778\ud574 \uc8fc\uc138\uc694.'
-    : 'Open the document in a new tab on mobile.';
-  const mobileCardDescription = lang === 'ko'
-    ? '\ube0c\ub77c\uc6b0\uc800 \ub0b4\uc7a5 PDF \ubbf8\ub9ac\ubcf4\uae30\uac00 \uae30\uae30\ub9c8\ub2e4 \ub2e4\ub974\uac8c \ub3d9\uc791\ud560 \uc218 \uc788\uc5b4\uc694. \uc544\ub798 \ubc84\ud2bc\uc73c\ub85c \ubb38\uc11c\ub97c \uc548\uc815\uc801\uc73c\ub85c \uc5f4\uac70\ub098 \uc800\uc7a5\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4.'
-    : 'Built-in PDF previews vary across mobile browsers, so use the actions below to open or save the document reliably.';
+  const saveToFilesLabel = lang === 'ko' ? '\ud30c\uc77c\ub85c \uc800\uc7a5' : 'Save to Files';
+  const mobileCardTitle = isIOS
+    ? (lang === 'ko' ? 'iPhone\uc5d0\uc11c\ub294 \ud30c\uc77c\uc5d0 \uc800\uc7a5\ud574 \uc8fc\uc138\uc694.' : 'Save the document to Files on iPhone.')
+    : (lang === 'ko' ? '\ubaa8\ubc14\uc77c\uc5d0\uc11c\ub294 \uc0c8 \ud0ed\uc73c\ub85c \ubb38\uc11c\ub97c \ud655\uc778\ud574 \uc8fc\uc138\uc694.' : 'Open the document in a new tab on mobile.');
+  const mobileCardDescription = isIOS
+    ? (lang === 'ko'
+      ? 'iOS Safari\uc5d0\uc11c\ub294 blob \ubb38\uc11c \uc5f4\uae30\uac00 \uc81c\ud55c\ub420 \uc218 \uc788\uc5b4\uc11c \ud30c\uc77c \uc800\uc7a5 \ubc29\uc2dd\uc744 \uc0ac\uc6a9\ud569\ub2c8\ub2e4. \uc544\ub798 \ubc84\ud2bc\uc744 \ub20c\ub7ec Files\uc5d0 \uc800\uc7a5\ud55c \ub4a4 \uc5f4\uc5b4 \uc8fc\uc138\uc694.'
+      : 'iOS Safari can block blob document opening, so use the save flow below and open the PDF from Files after saving.')
+    : (lang === 'ko'
+      ? '\ube0c\ub77c\uc6b0\uc800 \ub0b4\uc7a5 PDF \ubbf8\ub9ac\ubcf4\uae30\uac00 \uae30\uae30\ub9c8\ub2e4 \ub2e4\ub974\uac8c \ub3d9\uc791\ud560 \uc218 \uc788\uc5b4\uc694. \uc544\ub798 \ubc84\ud2bc\uc73c\ub85c \ubb38\uc11c\ub97c \uc548\uc815\uc801\uc73c\ub85c \uc5f4\uac70\ub098 \uc800\uc7a5\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4.'
+      : 'Built-in PDF previews vary across mobile browsers, so use the actions below to open or save the document reliably.');
 
   const mobileCardClassName = theme === 'dark'
     ? 'bg-bg-space-center/95 border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.35)]'
@@ -124,7 +130,7 @@ const RenderStage8 = ({ previewBlobUrl, totalPages, isPreviewLoading, previewErr
         </motion.div>
       )}
 
-      <div className="bg-bg-space-edge/30 rounded-2xl border border-black/5 dark:border-white/5 p-4 min-h-[460px] inner-shadow">
+      <div className={`bg-bg-space-edge/30 rounded-2xl border border-black/5 p-4 inner-shadow dark:border-white/5 ${previewBlobUrl && isMobilePreview ? '' : 'min-h-[460px]'}`}>
         {isPreviewLoading ? (
           <div className="min-h-[460px] flex flex-col items-center justify-center gap-4 text-center">
             <Loader2 className="w-8 h-8 text-primary-blue animate-spin" />
@@ -145,29 +151,32 @@ const RenderStage8 = ({ previewBlobUrl, totalPages, isPreviewLoading, previewErr
             </button>
           </div>
         ) : previewBlobUrl && isMobilePreview ? (
-          <div className="min-h-[460px] flex items-center justify-center px-4 py-8 sm:px-6">
-            <div className={`w-full max-w-md rounded-[32px] border p-6 text-center ${mobileCardClassName}`}>
-              <div className={`mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full ${mobileBadgeClassName}`}>
-                <FileText size={28} />
+          <div className="flex items-center justify-center px-4 py-8 sm:px-6">
+            <div className={`w-full max-w-md rounded-[32px] border p-5 text-center ${mobileCardClassName}`}>
+              <div className={`mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full ${mobileBadgeClassName}`}>
+                <FileText size={22} />
               </div>
               <div className="space-y-3">
                 <p className={`text-base font-bold ${mobileTitleClassName}`}>
                   {mobileCardTitle}
                 </p>
-                <p className={`text-sm leading-8 ${mobileDescriptionClassName}`}>
+                <p className={`text-sm leading-relaxed ${mobileDescriptionClassName}`}>
                   {mobileCardDescription}
                 </p>
               </div>
               <div className="mt-6 flex flex-col gap-3">
-                <a
-                  href={previewBlobUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="clay-btn-yellow flex w-full items-center justify-center gap-2 py-4 text-base font-bold shadow-lg"
-                >
-                  <ExternalLink size={18} />
-                  {openDocumentLabel}
-                </a>              </div>
+                {!isIOS && (
+                  <a
+                    href={previewBlobUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="clay-btn-yellow flex w-full items-center justify-center gap-2 py-4 text-base font-bold shadow-lg"
+                  >
+                    <ExternalLink size={18} />
+                    {openDocumentLabel}
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ) : previewBlobUrl ? (

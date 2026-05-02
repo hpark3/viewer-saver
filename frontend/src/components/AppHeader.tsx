@@ -53,7 +53,7 @@ export default function AppHeader({
             disabled={isLogoHomeDisabled}
             title={isLogoHomeDisabled ? (lang === 'ko' ? '\uBB38\uC11C \uCD94\uCD9C\uC774 \uC9C4\uD589 \uC911\uC77C \uB54C\uB294 \uD648\uC73C\uB85C \uC774\uB3D9\uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.' : 'Home navigation is disabled while extraction is running.') : undefined}
           >
-            <img src="/logo.png" className="h-20 md:h-24 w-auto shrink-0 object-contain -mr-1" alt="SnapDoc" />
+            <img src="/logo.png" className="h-20 md:h-24 w-auto shrink-0 object-contain -mr-1" alt="ViewerSaver" />
           </button>
         )}
         {theme !== 'pastel' && (
@@ -73,12 +73,12 @@ export default function AppHeader({
       </div>
 
       <div className="fixed bottom-6 right-6 z-50">
-        <Tooltip content={lang === 'ko' ? 'GitHub \uC800\uC7A5\uC18C \uC5F4\uAE30' : 'Open GitHub repository'} align="end" theme={theme}>
+        <Tooltip content={copy.app.github} align="end" theme={theme}>
           <a
             href={REPO_URL}
             target="_blank"
             rel="noreferrer"
-            aria-label="SnapDoc GitHub repository"
+            aria-label="ViewerSaver GitHub repository"
             className={`inline-flex items-center justify-center transition-colors ${theme === 'dark' ? 'text-white/35 hover:text-primary-blue' : 'text-text-secondary/70 hover:text-text-primary'}`}
           >
             <Github size={20} />

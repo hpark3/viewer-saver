@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useRef, useState, type ReactNode } from 'react';
 
 type TooltipProps = {
   children: ReactNode;
@@ -9,6 +9,9 @@ type TooltipProps = {
 };
 
 const Tooltip = ({ children, content, side = 'top', align = 'center', theme = 'light' }: TooltipProps) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const pointerDownRef = useRef(false);
+
   const horizontalClassName = align === 'start'
     ? 'left-0'
     : align === 'end'
@@ -36,10 +39,32 @@ const Tooltip = ({ children, content, side = 'top', align = 'center', theme = 'l
     : `top-full ${arrowAnchorClassName} tooltip-arrow tooltip-arrow-top`;
 
   return (
-    <div className="group relative flex items-center focus-within:z-[60] hover:z-[60]">
+    <div
+      className="relative flex items-center focus-within:z-[60] hover:z-[60]"
+      onMouseEnter={() => setIsVisible(true)}
+      onMouseLeave={() => setIsVisible(false)}
+      onPointerDownCapture={() => {
+        pointerDownRef.current = true;
+        setIsVisible(false);
+      }}
+      onPointerUpCapture={() => {
+        pointerDownRef.current = false;
+      }}
+      onPointerCancelCapture={() => {
+        pointerDownRef.current = false;
+      }}
+      onFocusCapture={() => {
+        if (!pointerDownRef.current) {
+          setIsVisible(true);
+        }
+      }}
+      onBlurCapture={() => {
+        setIsVisible(false);
+      }}
+    >
       {children}
       <div
-        className={`pointer-events-none absolute ${positionClassName} ${themeClassName} z-[60] whitespace-nowrap opacity-0 transition-[opacity,transform] duration-200 group-hover:opacity-100 group-focus-within:opacity-100 tooltip-shell`}
+        className={`pointer-events-none absolute ${positionClassName} ${themeClassName} z-[60] whitespace-nowrap transition-[opacity,transform] duration-200 tooltip-shell ${isVisible ? 'opacity-100' : 'opacity-0'}`}
       >
         <span className="block leading-none">{content}</span>
         <div className={`absolute ${arrowClassName}`} />
