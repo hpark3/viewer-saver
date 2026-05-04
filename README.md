@@ -1,21 +1,33 @@
 # ViewerSaver
 
-> Browser-only document capture for local use.
+<br>
+<br>
 
-[![Build](https://img.shields.io/badge/build-passing-22c55e)](#quick-start)
-[![Python](https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white)](#requirements)
-[![License](https://img.shields.io/badge/license-AGPL--3.0-black)](#license)
-[![Demo](https://img.shields.io/badge/demo-live-0ea5e9)](https://snapdoc-demo.vercel.app)
+<p align="center">
+  <img src="frontend-demo/src/assets/branding/logo-icon+text-light.png" alt="ViewerSaver" width="320" />
+</p>
 
-English | [한국어 README](README-KR.md)
+<p align="center">
+  <strong>Browser-only document capture for local use.</strong>
+</p>
+
+<p align="center">
+  <a href="#quick-start"><img src="https://img.shields.io/badge/build-passing-22c55e" alt="Build"></a>
+  <a href="#requirements"><img src="https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python"></a>
+  <a href="#license"><img src="https://img.shields.io/badge/license-AGPL--3.0-black" alt="License"></a>
+  <a href="https://snapdoc-demo.vercel.app"><img src="https://img.shields.io/badge/demo-live-0ea5e9" alt="Demo"></a>
+</p>
+
+<p align="center">
+  English | <a href="README-KR.md">한국어 README</a>
+</p>
 
 ## Overview
 
 ViewerSaver saves browser-only documents such as Canva and slide viewers to PDF on your own machine.
 
-> Branding note: `ViewerSaver` is the current official product name. `SnapDoc` may still appear in older links, demo surfaces, or in-progress branding updates while the transition is being completed.
-
 Current limits:
+
 - Real capture is not supported in cloud-only deployment because browser automation is required.
 - The main workflow is designed for local execution.
 - Windows is the primary development environment; macOS and Linux are best-effort.
@@ -51,18 +63,19 @@ On Windows, prefer `py` commands instead of `python`. On macOS and Linux, use `p
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | Vite 6 + React 19 + TypeScript + TailwindCSS 4 |
-| Animation | motion (framer-motion v12) |
-| Backend | FastAPI + uvicorn (Python) |
-| PDF Engine | Playwright + pypdf + pdf2image |
+| Layer      | Technology                                     |
+| ---------- | ---------------------------------------------- |
+| Frontend   | Vite 6 + React 19 + TypeScript + TailwindCSS 4 |
+| Animation  | motion (framer-motion v12)                     |
+| Backend    | FastAPI + uvicorn (Python)                     |
+| PDF Engine | Playwright + pypdf + pdf2image                 |
 
 ## Installation Guide
 
 Choose your path: [One-Click Setup (Windows only)](#one-click-setup-windows-only) | [Windows First-Time Setup](#windows-first-time-setup) | [Quick Start (macOS / Linux / advanced users)](#quick-start)
 
 <a id="one-click-setup-windows-only"></a>
+
 ## One-Click Setup (Windows only)
 
 Use this if you are on Windows and want the easiest local setup path.
@@ -110,6 +123,7 @@ run.bat
 You do not need to run `npm run dev` for this user-style local launch.
 
 <a id="windows-first-time-setup"></a>
+
 ## Windows First-Time Setup
 
 Use this if you are on Windows and this PC has never been used for Python projects before.
@@ -165,6 +179,7 @@ py server.py
 9. Open `http://localhost:8000`.
 
 <a id="quick-start"></a>
+
 ## Quick Start
 
 Use this if you are on macOS or Linux, or if you are comfortable running terminal commands yourself.

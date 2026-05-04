@@ -1,21 +1,33 @@
 # ViewerSaver
 
-> 로컬 환경에서 브라우저 전용 문서를 PDF로 저장하는 도구입니다. 공개 데모는 UI 미리보기용이며, 실제 캡처는 Playwright 기반 로컬 실행이 필요합니다.
+<br>
+<br>
 
-[![Build](https://img.shields.io/badge/build-passing-22c55e)](#빠른-시작)
-[![Python](https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white)](#요구-사항)
-[![License](https://img.shields.io/badge/license-AGPL--3.0-black)](#라이선스)
-[![Demo](https://img.shields.io/badge/demo-live-0ea5e9)](https://snapdoc-demo.vercel.app)
+<p align="center">
+  <img src="frontend-demo/src/assets/branding/logo-icon+text-light.png" alt="ViewerSaver" width="320" />
+</p>
 
-[English README](README.md) | 한국어
+<p align="center">
+  <strong>로컬 환경에서 브라우저 전용 문서를 PDF로 저장하는 도구입니다.</strong>
+</p>
+
+<p align="center">
+  <a href="#빠른-시작"><img src="https://img.shields.io/badge/build-passing-22c55e" alt="Build"></a>
+  <a href="#요구-사항"><img src="https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python"></a>
+  <a href="#라이선스"><img src="https://img.shields.io/badge/license-AGPL--3.0-black" alt="License"></a>
+  <a href="https://snapdoc-demo.vercel.app"><img src="https://img.shields.io/badge/demo-live-0ea5e9" alt="Demo"></a>
+</p>
+
+<p align="center">
+  <a href="README.md">English README</a> | 한국어
+</p>
 
 ## 개요
 
 ViewerSaver는 Canva, 슬라이드 뷰어처럼 브라우저 안에서만 접근 가능한 문서를 로컬 PC에서 PDF로 저장할 수 있게 도와줍니다. 실제 캡처는 로컬 Playwright 실행을 기준으로 설계되어 있고, 공개 데모는 전체 런타임을 노출하지 않고 인터페이스만 확인할 수 있도록 분리되어 있습니다.
 
-> 브랜딩 안내: 현재 공식 제품명은 `ViewerSaver`입니다. 전환 작업이 완전히 끝날 때까지 예전 명칭인 `SnapDoc`이 일부 링크, 데모 화면, 진행 중인 브랜딩 요소에 남아 있을 수 있습니다.
-
 현재 제한 사항:
+
 - 브라우저 자동화가 필요하므로 클라우드 전용 배포에서는 실제 캡처를 지원하지 않습니다.
 - 기본 사용 흐름은 로컬 실행 기준으로 설계되어 있습니다.
 - Windows를 주 개발 환경으로 두고 있으며, macOS와 Linux는 best-effort 지원입니다.
@@ -52,18 +64,19 @@ Windows에서는 `python`보다 `py` 명령을 사용하는 편이 더 안전합
 
 ## 기술 스택
 
-| 계층 | 기술 |
-|------|------|
-| Frontend | Vite 6 + React 19 + TypeScript + TailwindCSS 4 |
-| Animation | motion (framer-motion v12) |
-| Backend | FastAPI + uvicorn (Python) |
-| PDF Engine | Playwright + pypdf + pdf2image |
+| 계층       | 기술                                           |
+| ---------- | ---------------------------------------------- |
+| Frontend   | Vite 6 + React 19 + TypeScript + TailwindCSS 4 |
+| Animation  | motion (framer-motion v12)                     |
+| Backend    | FastAPI + uvicorn (Python)                     |
+| PDF Engine | Playwright + pypdf + pdf2image                 |
 
 ## 설치 가이드
 
 바로가기: [원클릭 설치 (Windows 전용)](#one-click-setup-windows-only) | [Windows 처음 설치 가이드](#windows-first-time-setup) | [빠른 시작 (macOS / Linux / 터미널 익숙한 사용자)](#quick-start)
 
 <a id="one-click-setup-windows-only"></a>
+
 ## 원클릭 설치 (Windows 전용)
 
 Windows를 사용 중이고 가장 쉬운 로컬 실행 경로가 필요하다면 이 방법부터 시작하세요.
@@ -111,6 +124,7 @@ run.bat
 이 사용자용 실행 방식에서는 `npm run dev`를 따로 실행할 필요가 없습니다.
 
 <a id="windows-first-time-setup"></a>
+
 ## Windows 처음 설치 가이드
 
 Windows를 사용 중이고, 이 PC에서 Python 프로젝트를 처음 실행한다면 이 섹션부터 따라가세요.
@@ -166,6 +180,7 @@ py server.py
 9. 브라우저에서 `http://localhost:8000`을 엽니다.
 
 <a id="quick-start"></a>
+
 ## 빠른 시작 (macOS / Linux / 터미널 익숙한 사용자)
 
 macOS 또는 Linux 사용자이거나, 운영체제와 관계없이 터미널 명령 실행이 익숙하다면 이 경로를 사용하세요.

@@ -433,7 +433,7 @@ def root():
         return FileResponse(str(index_path))
     return {
         "status": "ok",
-        "service": "SnapDoc",
+        "service": "ViewerSaver",
         "frontend": "not_built",
         "hint": "Run `cd frontend && npm install && npm run build` or use `npm run dev` in the frontend directory.",
     }

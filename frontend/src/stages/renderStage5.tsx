@@ -31,7 +31,7 @@ const RenderStage5 = ({ copy, theme, getStage5FileInfo, handleOpenPreview, outpu
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
           <button 
             onClick={() => { void handleOpenPreview(); }}
-            className="bg-white text-text-primary px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-xl scale-90 group-hover:scale-100 transition-all duration-300 hover:bg-white/90 active:scale-95"
+            className="bg-white outline-none focus:outline-none text-text-primary px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-xl scale-90 group-hover:scale-100 transition-all duration-300 hover:bg-white/90 active:scale-95"
           >
             <Search size={18} className="text-text-secondary" /> {copy.stage4.preview}
           </button>
@@ -51,7 +51,7 @@ const RenderStage5 = ({ copy, theme, getStage5FileInfo, handleOpenPreview, outpu
         <button 
           onClick={() => { void handleDownloadPdf(); }}
           disabled={isDownloadingPdf}
-          className="w-10 h-10 rounded-full bg-vivid-yellow/10 dark:bg-vivid-yellow/20 hover:bg-vivid-yellow/20 dark:hover:bg-vivid-yellow/30 text-vivid-yellow flex items-center justify-center transition-all shadow-sm hover:shadow-md active:scale-95 shrink-0 border border-vivid-yellow/20 disabled:opacity-60 disabled:cursor-not-allowed"
+          className="w-10 h-10 outline-none focus:outline-none rounded-full bg-vivid-yellow/10 dark:bg-vivid-yellow/20 hover:bg-vivid-yellow/20 dark:hover:bg-vivid-yellow/30 text-vivid-yellow flex items-center justify-center transition-all shadow-sm hover:shadow-md active:scale-95 shrink-0 border border-vivid-yellow/20 disabled:opacity-60 disabled:cursor-not-allowed"
           title={copy.stage4.downloadPdf}
         >
           {isDownloadingPdf ? <Loader2 size={20} className="animate-spin" /> : <Download size={20} />}
@@ -63,7 +63,7 @@ const RenderStage5 = ({ copy, theme, getStage5FileInfo, handleOpenPreview, outpu
           whileHover={{ scale: 1.01, y: -2, shadow: "0 10px 30px rgba(0,0,0,0.1)" }}
           whileTap={{ scale: 0.98 }}
           onClick={() => { void handleFinalSave(true); }}
-          className="w-full py-4 bg-white dark:bg-white/5 text-primary-blue text-sm font-bold rounded-full transition-all flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-black/5"
+          className="w-full outline-none focus:outline-none py-4 bg-white dark:bg-white/5 text-primary-blue text-sm font-bold rounded-full transition-all flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-black/5"
         >
           <Save size={18} /> {copy.stage4.chooseSaveLocationAgain}
         </motion.button>
@@ -73,7 +73,7 @@ const RenderStage5 = ({ copy, theme, getStage5FileInfo, handleOpenPreview, outpu
             whileHover={{ x: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => transitionTo(2)} 
-            className="text-text-secondary hover:text-text-primary text-[11px] font-bold transition-colors py-2"
+            className="text-text-secondary outline-none focus:outline-none hover:text-text-primary text-[11px] font-bold transition-colors py-2"
           >
             {copy.stage8.backToReview}
           </motion.button>
@@ -82,7 +82,7 @@ const RenderStage5 = ({ copy, theme, getStage5FileInfo, handleOpenPreview, outpu
             whileHover={{ x: 2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => window.location.reload()} 
-            className="text-text-secondary hover:text-text-primary text-[11px] font-bold transition-colors py-2"
+            className="text-text-secondary outline-none focus:outline-none hover:text-text-primary text-[11px] font-bold transition-colors py-2"
           >
             {copy.stage4.restart}
           </motion.button>

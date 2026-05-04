@@ -28,19 +28,19 @@ const RenderStage7 = ({ copy, totalPages, errorPages, theme, lang, handleOpenPre
     <div className="flex flex-col gap-4 max-w-xs mx-auto pt-2">
       <button 
         onClick={() => void handleOpenPreview()}
-        className="px-6 py-3 clay-btn text-primary-blue text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm"
+        className="px-6 py-3 outline-none focus:outline-none clay-btn text-primary-blue text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm"
       >
         <Eye size={18} /> {copy.stage7.preview}
       </button>
       <button 
         onClick={handleFinalSave}
-        className="px-6 py-3 clay-btn-primary text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-lg"
+        className="px-6 py-3 outline-none focus:outline-none clay-btn-primary text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-lg"
       >
         <Save size={18} /> {copy.stage7.saveNow}
       </button>
       <button 
         onClick={() => transitionTo(2)}
-        className="text-text-secondary hover:text-text-primary text-sm font-medium transition-colors py-2"
+        className="text-text-secondary outline-none focus:outline-none hover:text-text-primary text-sm font-medium transition-colors py-2"
       >
         {copy.stage8.backToReview}
       </button>

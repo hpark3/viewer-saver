@@ -1,6 +1,12 @@
 import { Github, Globe, History, Moon, Sparkles, Sun } from 'lucide-react';
 import { motion } from 'motion/react';
 import type { Dispatch, SetStateAction } from 'react';
+import logoIconLight from '../assets/branding/logo-icon-light.png';
+import logoIconDark from '../assets/branding/logo-icon-dark.png';
+import logoIconPastel from '../assets/branding/logo-icon-pastel.png';
+import logoTextLight from '../assets/branding/logo-text-light.png';
+import logoTextDark from '../assets/branding/logo-text-dark.png';
+import logoTextPastel from '../assets/branding/logo-text-pastel.png';
 import type { Lang } from '../i18n';
 import { REPO_URL, type AppTheme, type HistoryItem } from '../hooks/appShared';
 import HistoryDrawer from './HistoryDrawer';
@@ -25,6 +31,9 @@ type AppHeaderProps = {
   onRecaptureHistory: (url: string, mode: 'fast' | 'quality' | null) => void;
 };
 
+const LOGO_ICONS: Record<string, string> = { light: logoIconLight, dark: logoIconDark, pastel: logoIconPastel };
+const LOGO_TEXTS: Record<string, string> = { light: logoTextLight, dark: logoTextDark, pastel: logoTextPastel };
+
 export default function AppHeader({
   theme,
   lang,
@@ -44,32 +53,19 @@ export default function AppHeader({
   return (
     <>
       <div className="fixed top-5 left-5 z-50">
-        {theme === 'pastel' && (
-          <button
-            type="button"
-            onClick={onLogoHome}
-            className={`logo flex items-start justify-start gap-[8px] rounded-2xl border-0 bg-transparent p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-blue/50 ${isLogoHomeDisabled ? 'cursor-not-allowed opacity-45' : 'cursor-pointer'}`}
-            aria-label={lang === 'ko' ? '\uBA54\uC778 \uD654\uBA74\uC73C\uB85C \uB3CC\uC544\uAC00\uAE30' : 'Return to home screen'}
-            disabled={isLogoHomeDisabled}
-            title={isLogoHomeDisabled ? (lang === 'ko' ? '\uBB38\uC11C \uCD94\uCD9C\uC774 \uC9C4\uD589 \uC911\uC77C \uB54C\uB294 \uD648\uC73C\uB85C \uC774\uB3D9\uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.' : 'Home navigation is disabled while extraction is running.') : undefined}
-          >
-            <img src="/logo.png" className="h-20 md:h-24 w-auto shrink-0 object-contain -mr-1" alt="ViewerSaver" />
-          </button>
-        )}
-        {theme !== 'pastel' && (
-          <button
-            type="button"
-            onClick={onLogoHome}
-            className={`logo flex items-center justify-start gap-2 rounded-2xl border-0 bg-transparent px-1 py-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-blue/50 ${isLogoHomeDisabled ? 'cursor-not-allowed opacity-45' : 'cursor-pointer'}`}
-            aria-label={lang === 'ko' ? '\uBA54\uC778 \uD654\uBA74\uC73C\uB85C \uB3CC\uC544\uAC00\uAE30' : 'Return to home screen'}
-            disabled={isLogoHomeDisabled}
-            title={isLogoHomeDisabled ? (lang === 'ko' ? '\uBB38\uC11C \uCD94\uCD9C\uC774 \uC9C4\uD589 \uC911\uC77C \uB54C\uB294 \uD648\uC73C\uB85C \uC774\uB3D9\uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.' : 'Home navigation is disabled while extraction is running.') : undefined}
-          >
-            <span className={`text-lg font-bold tracking-[-0.02em] drop-shadow-sm ${theme === 'dark' ? 'text-primary-blue' : 'text-primary-blue'}`}>
-              {copy.app.logo}
-            </span>
-          </button>
-        )}
+        <button
+          type="button"
+          onClick={onLogoHome}
+          className={`logo flex items-center justify-start gap-2 rounded-2xl border-0 bg-transparent px-1 py-0.5 outline-none focus:outline-none ${isLogoHomeDisabled ? 'cursor-not-allowed opacity-45' : 'cursor-pointer'}`}
+          aria-label={lang === 'ko' ? '\uBA54\uC778 \uD654\uBA74\uC73C\uB85C \uB3CC\uC544\uAC00\uAE30' : 'Return to home screen'}
+          disabled={isLogoHomeDisabled}
+          title={isLogoHomeDisabled ? (lang === 'ko' ? '\uBB38\uC11C \uCD94\uCD9C\uC774 \uC9C4\uD589 \uC911\uC77C \uB54C\uB294 \uD648\uC73C\uB85C \uC774\uB3D9\uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.' : 'Home navigation is disabled while extraction is running.') : undefined}
+        >
+          <div className="flex items-center gap-2">
+            <img src={LOGO_ICONS[theme]} alt="" className="h-[36px] w-auto shrink-0 object-contain" />
+            <img src={LOGO_TEXTS[theme]} alt="ViewerSaver" className="h-[38px] w-auto shrink-0 object-contain" />
+          </div>
+        </button>
       </div>
 
       <div className="fixed bottom-6 right-6 z-50">
@@ -79,7 +75,7 @@ export default function AppHeader({
             target="_blank"
             rel="noreferrer"
             aria-label="ViewerSaver GitHub repository"
-            className={`inline-flex items-center justify-center transition-colors ${theme === 'dark' ? 'text-white/35 hover:text-primary-blue' : 'text-text-secondary/70 hover:text-text-primary'}`}
+            className={`inline-flex items-center justify-center outline-none focus:outline-none transition-colors ${theme === 'dark' ? 'text-white/35 hover:text-primary-blue' : 'text-text-secondary/70 hover:text-text-primary'}`}
           >
             <Github size={20} />
           </a>
@@ -92,7 +88,7 @@ export default function AppHeader({
             whileHover={{ scale: 1.1, rotate: -15 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setLang((current) => current === 'ko' ? 'en' : 'ko')}
-            className="flex h-12 w-12 items-center justify-center rounded-full spatial-card shadow-lg"
+            className="flex h-12 w-12 items-center justify-center rounded-full spatial-card shadow-lg outline-none focus:outline-none"
             aria-label={copy.app.languageToggle}
           >
             <div className="relative">
@@ -111,7 +107,7 @@ export default function AppHeader({
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setTheme((current) => current === 'light' ? 'dark' : current === 'dark' ? 'pastel' : 'light')}
-            className="flex h-12 w-12 items-center justify-center rounded-full spatial-card shadow-lg"
+            className="flex h-12 w-12 items-center justify-center rounded-full spatial-card shadow-lg outline-none focus:outline-none"
             aria-label={copy.app.themeToggle}
           >
             {theme === 'light'
@@ -129,7 +125,7 @@ export default function AppHeader({
             whileHover={{ scale: 1.1, rotate: -5 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsHistoryOpen(true)}
-            className="relative flex h-12 w-12 items-center justify-center rounded-full spatial-card shadow-lg"
+            className="relative flex h-12 w-12 items-center justify-center rounded-full spatial-card shadow-lg outline-none focus:outline-none"
             aria-label={copy.history.title}
           >
             <History size={20} className="text-primary-blue" />

@@ -84,7 +84,7 @@ const HistoryDrawer = ({
               </div>
               <button 
                 onClick={onClose}
-                className="w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-center transition-colors"
+                className="w-10 h-10 outline-none focus:outline-none rounded-full hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-center transition-colors"
               >
                 <X size={20} />
               </button>
@@ -131,7 +131,7 @@ const HistoryDrawer = ({
                         </div>
                         <button 
                           onClick={() => onDelete(item.id)}
-                          className="w-8 h-8 rounded-full hover:bg-red-500/10 text-text-secondary hover:text-red-500 flex items-center justify-center transition-colors shrink-0"
+                          className="w-8 h-8 outline-none focus:outline-none rounded-full hover:bg-red-500/10 text-text-secondary hover:text-red-500 flex items-center justify-center transition-colors shrink-0"
                         >
                           <Trash2 size={14} />
                         </button>
@@ -155,14 +155,14 @@ const HistoryDrawer = ({
                         {!expiry.expired ? (
                           <button 
                             onClick={() => onView(item)}
-                            className={`flex-1 py-2 bg-primary-blue ${theme === 'pastel' ? 'text-[#1A3A34]' : 'text-white'} text-[11px] font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-lg shadow-primary-blue/20 hover:bg-primary-blue/90 transition-all active:scale-95`}
+                            className={`flex-1 py-2 outline-none focus:outline-none bg-primary-blue ${theme === 'pastel' ? 'text-[#1A3A34]' : 'text-white'} text-[11px] font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-lg shadow-primary-blue/20 hover:bg-primary-blue/90 transition-all active:scale-95`}
                           >
                             <ExternalLink size={12} /> {copy.history.view}
                           </button>
                         ) : (
                           <button 
                             onClick={() => onRecapture(item.url, item.mode)}
-                            className={`flex-1 py-2 bg-vivid-yellow ${theme === 'pastel' ? 'text-[#9B4D5D]' : 'text-slate-900'} text-[11px] font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-lg shadow-vivid-yellow/20 hover:bg-vivid-yellow/90 transition-all active:scale-95`}
+                            className={`flex-1 py-2 outline-none focus:outline-none bg-vivid-yellow ${theme === 'pastel' ? 'text-[#9B4D5D]' : 'text-slate-900'} text-[11px] font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-lg shadow-vivid-yellow/20 hover:bg-vivid-yellow/90 transition-all active:scale-95`}
                           >
                             <RotateCcw size={12} /> {copy.history.reCapture}
                           </button>
@@ -178,7 +178,7 @@ const HistoryDrawer = ({
               <div className="p-6 border-t border-black/5 dark:border-white/10">
                 <button 
                   onClick={onClear}
-                  className="w-full py-3 text-red-500 text-xs font-bold hover:bg-red-500/5 rounded-xl transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-3 outline-none focus:outline-none text-red-500 text-xs font-bold hover:bg-red-500/5 rounded-xl transition-colors flex items-center justify-center gap-2"
                 >
                   <Trash2 size={14} /> {copy.history.clearAll}
                 </button>
