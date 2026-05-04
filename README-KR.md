@@ -15,7 +15,7 @@
   <a href="#빠른-시작"><img src="https://img.shields.io/badge/build-passing-22c55e" alt="Build"></a>
   <a href="#요구-사항"><img src="https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python"></a>
   <a href="#라이선스"><img src="https://img.shields.io/badge/license-AGPL--3.0-black" alt="License"></a>
-  <a href="https://snapdoc-demo.vercel.app"><img src="https://img.shields.io/badge/demo-live-0ea5e9" alt="Demo"></a>
+  <a href="https://viewer-saver.vercel.app"><img src="https://img.shields.io/badge/demo-live-0ea5e9" alt="Demo"></a>
 </p>
 
 <p align="center">
@@ -34,8 +34,10 @@ ViewerSaver는 Canva, 슬라이드 뷰어처럼 브라우저 안에서만 접근
 
 ## 라이브 데모
 
-- Try it online: [https://snapdoc-demo.vercel.app](https://snapdoc-demo.vercel.app)
+- Try it online: [https://viewer-saver.vercel.app](https://viewer-saver.vercel.app)
 - 저장소: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
+
+> 기존 `snapdoc-demo.vercel.app` 링크는 자동으로 이 주소로 연결됩니다 — 저장해둔 링크나 북마크는 그대로 사용할 수 있습니다.
 - 참고: 배포된 데모는 mocked response 기반 UI 미리보기용입니다.
 
 ## 동작 방식

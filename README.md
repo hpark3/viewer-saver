@@ -15,7 +15,7 @@
   <a href="#quick-start"><img src="https://img.shields.io/badge/build-passing-22c55e" alt="Build"></a>
   <a href="#requirements"><img src="https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python"></a>
   <a href="#license"><img src="https://img.shields.io/badge/license-AGPL--3.0-black" alt="License"></a>
-  <a href="https://snapdoc-demo.vercel.app"><img src="https://img.shields.io/badge/demo-live-0ea5e9" alt="Demo"></a>
+  <a href="https://viewer-saver.vercel.app"><img src="https://img.shields.io/badge/demo-live-0ea5e9" alt="Demo"></a>
 </p>
 
 <p align="center">
@@ -34,8 +34,10 @@ Current limits:
 
 ## Live Demo
 
-- Try it online: [https://snapdoc-demo.vercel.app](https://snapdoc-demo.vercel.app)
+- Try it online: [https://viewer-saver.vercel.app](https://viewer-saver.vercel.app)
 - Repository: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
+
+> `snapdoc-demo.vercel.app` redirects here automatically — existing bookmarks and links will continue to work.
 
 ## How It Works
 
