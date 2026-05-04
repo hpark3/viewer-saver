@@ -4,7 +4,7 @@
 <br>
 
 <p align="center">
-  <img src="frontend-demo/src/assets/branding/logo-icon+text-light.png" alt="ViewerSaver" width="320" />
+  <img src="frontend/src/assets/branding/logo-icon+text-light.png" alt="ViewerSaver" width="320" />
 </p>
 
 <p align="center">
@@ -44,10 +44,9 @@ ViewerSaver는 Canva, 슬라이드 뷰어처럼 브라우저 안에서만 접근
 2. 페이지를 캡처한 뒤 미리보기와 오류 검토 단계를 통해 문제가 있는 페이지를 확인합니다.
 3. 검토 또는 교체가 끝난 결과를 최종 PDF로 묶어 저장합니다.
 
+[readme-1.webm](https://github.com/user-attachments/assets/5aecbed8-7cfb-49fd-9efd-f4a23380a2f0)
 
-[readme-1.webm](https://github.com/user-attachments/assets/483a881d-d3fb-4538-8016-67ca4c1d0943)
-
-[readme-2.webm](https://github.com/user-attachments/assets/cf8da938-148e-4750-8e16-601b706975f4)
+[readme-2.webm](https://github.com/user-attachments/assets/2214ba6f-6fa3-41fe-b7e3-9dd2f11e2bc5)
 
 <br>
 
