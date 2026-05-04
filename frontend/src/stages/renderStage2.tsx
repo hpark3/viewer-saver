@@ -31,7 +31,7 @@ const RenderStage2 = ({ totalPages, pagePreviews, stage2PreviewError, lang, copy
           transitionTo(0);
         }
       }}
-      className="absolute top-0 left-0 -translate-y-12 flex items-center gap-2 text-text-secondary hover:text-primary-blue transition-colors text-xs font-bold uppercase tracking-widest group"
+      className="absolute top-0 left-0 -translate-y-12 outline-none focus:outline-none flex items-center gap-2 text-text-secondary hover:text-primary-blue transition-colors text-xs font-bold uppercase tracking-widest group"
     >
       <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center group-hover:bg-primary-blue/10 transition-colors">
         <ArrowLeft size={16} />
@@ -136,7 +136,7 @@ const RenderStage2 = ({ totalPages, pagePreviews, stage2PreviewError, lang, copy
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
             onClick={backToTop}
-            className="absolute bottom-8 left-10 w-16 h-16 bg-primary-blue text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 z-30 border-4 border-white dark:border-bg-space-center"
+            className="absolute bottom-8 left-10 w-16 h-16 outline-none focus:outline-none bg-primary-blue text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 z-30 border-4 border-white dark:border-bg-space-center"
           >
             <ChevronRight className="-rotate-90 w-8 h-8" strokeWidth={4} />
           </motion.button>
@@ -160,7 +160,7 @@ const RenderStage2 = ({ totalPages, pagePreviews, stage2PreviewError, lang, copy
             {errorPages.length > 0 && (
               <button 
                 onClick={() => setErrorPages([])}
-                className="text-[10px] font-bold text-red-500/80 hover:text-red-500 transition-colors"
+                className="text-[10px] outline-none focus:outline-none font-bold text-red-500/80 hover:text-red-500 transition-colors"
               >
                 CLEAR ALL
               </button>
@@ -211,7 +211,7 @@ const RenderStage2 = ({ totalPages, pagePreviews, stage2PreviewError, lang, copy
                         setErrorPages(prev => prev.filter(p => p !== page));
                       }} 
                       style={!isSelected && theme === 'dark' ? { color: 'rgba(248, 113, 113, 0.6)' } : {}}
-                      className={`p-1 rounded-full transition-colors ${
+                      className={`p-1 outline-none focus:outline-none rounded-full transition-colors ${
                         isSelected ? 'hover:bg-white/20' : 'hover:bg-red-500/10 text-slate-400 hover:text-red-500'
                       }`}
                     >
@@ -240,7 +240,7 @@ const RenderStage2 = ({ totalPages, pagePreviews, stage2PreviewError, lang, copy
             </div>
             <button 
               onClick={handleAddPage}
-              className="w-14 h-14 clay-btn text-primary-blue hover:bg-primary-blue/5 transition-all shadow-sm shrink-0"
+              className="w-14 h-14 outline-none focus:outline-none clay-btn text-primary-blue hover:bg-primary-blue/5 transition-all shadow-sm shrink-0"
             >
               <Plus size={24} />
             </button>
@@ -255,7 +255,7 @@ const RenderStage2 = ({ totalPages, pagePreviews, stage2PreviewError, lang, copy
           whileTap={{ scale: 0.98 }}
           onClick={handleRecapture} 
           disabled={errorPages.length === 0}
-          className="w-full clay-btn-primary font-bold py-5 flex items-center justify-center gap-3 transition-all shadow-xl disabled:opacity-40 disabled:grayscale text-lg"
+          className="w-full outline-none focus:outline-none clay-btn-primary font-bold py-5 flex items-center justify-center gap-3 transition-all shadow-xl disabled:opacity-40 disabled:grayscale text-lg"
         >
           {copy.stage2.startRecapture} <ChevronRight size={22} />
         </motion.button>
@@ -263,7 +263,7 @@ const RenderStage2 = ({ totalPages, pagePreviews, stage2PreviewError, lang, copy
           whileHover={{ scale: 1.01, y: -1 }}
           whileTap={{ scale: 0.98 }}
           onClick={handleSkipToSave} 
-          className="w-full py-4 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-text-secondary hover:text-text-primary rounded-2xl text-sm font-bold transition-all border border-black/5 dark:border-white/5"
+          className="w-full outline-none focus:outline-none py-4 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-text-secondary hover:text-text-primary rounded-2xl text-sm font-bold transition-all border border-black/5 dark:border-white/5"
         >
           {copy.stage2.skipAndSave}
         </motion.button>

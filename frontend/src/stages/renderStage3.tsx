@@ -20,7 +20,7 @@ const RenderStage3 = ({ copy, handleAutoRecapture, handleManualUpload }: any) =>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <button 
         onClick={handleAutoRecapture}
-        className="clay-card p-8 text-left flex flex-col gap-4 group transition-all duration-300 border-2 border-transparent hover:border-primary-blue/20"
+        className="clay-card outline-none focus:outline-none p-8 text-left flex flex-col gap-4 group transition-all duration-300 border-2 border-transparent hover:border-primary-blue/20"
       >
         <div className="w-12 h-12 clay-icon-badge bg-primary-blue flex items-center justify-center shadow-lg shadow-primary-blue/20 group-hover:scale-110 transition-transform">
           <Bot className="text-white w-6 h-6" />
@@ -33,7 +33,7 @@ const RenderStage3 = ({ copy, handleAutoRecapture, handleManualUpload }: any) =>
 
       <button 
         onClick={handleManualUpload}
-        className="clay-card p-8 text-left flex flex-col gap-4 group transition-all duration-300 border-2 border-transparent hover:border-vivid-yellow/20"
+        className="clay-card outline-none focus:outline-none p-8 text-left flex flex-col gap-4 group transition-all duration-300 border-2 border-transparent hover:border-vivid-yellow/20"
       >
         <div className="w-12 h-12 clay-icon-badge bg-vivid-yellow flex items-center justify-center shadow-lg shadow-vivid-yellow/20 group-hover:scale-110 transition-transform">
           <FolderUp className="text-white w-6 h-6" />

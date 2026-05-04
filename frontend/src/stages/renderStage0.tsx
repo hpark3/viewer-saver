@@ -29,7 +29,7 @@ const RenderStage0 = ({ copy, url, setUrl, mode, setMode, theme, isStarting, sta
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setMode('fast')}
-            className={`clay-card px-5 py-7 text-left flex flex-col gap-4 transition-all duration-300 border-2 min-h-[210px] justify-between ${
+            className={`clay-card outline-none focus:outline-none px-5 py-7 text-left flex flex-col gap-4 transition-all duration-300 border-2 min-h-[210px] justify-between ${
               mode === 'fast' 
                 ? (theme === 'pastel' ? 'border-[#BFFFC7] bg-[#BFFFC7]/[0.1]' : 'border-primary-blue bg-primary-blue/[0.05] dark:bg-primary-blue/[0.1]') 
                 : 'border-transparent'
@@ -52,7 +52,7 @@ const RenderStage0 = ({ copy, url, setUrl, mode, setMode, theme, isStarting, sta
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setMode('quality')}
-            className={`clay-card px-5 py-7 text-left flex flex-col gap-4 transition-all duration-300 border-2 min-h-[210px] justify-between ${
+            className={`clay-card outline-none focus:outline-none px-5 py-7 text-left flex flex-col gap-4 transition-all duration-300 border-2 min-h-[210px] justify-between ${
               mode === 'quality' 
                 ? (theme === 'pastel' ? 'border-[#D9D2FF] bg-[#D9D2FF]/[0.1]' : 'border-primary-blue bg-primary-blue/[0.05] dark:bg-primary-blue/[0.1]') 
                 : 'border-transparent'
@@ -83,7 +83,7 @@ const RenderStage0 = ({ copy, url, setUrl, mode, setMode, theme, isStarting, sta
       whileTap={{ scale: 0.97 }}
       disabled={!url || !mode || isStarting}
       onClick={() => startCapture()}
-      className="clay-btn-yellow w-full py-4 flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 transition-shadow"
+      className="clay-btn-yellow outline-none focus:outline-none w-full py-4 flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 transition-shadow"
     >
       {isStarting ? copy.stage0.starting : copy.stage0.start} <ChevronRight size={18} />
     </motion.button>

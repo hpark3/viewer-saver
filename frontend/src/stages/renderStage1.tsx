@@ -38,7 +38,7 @@ const RenderStage1 = ({ copy, mode, completedPages, totalPages, progress, estima
     {retryable && (
       <button
         onClick={retryStream}
-        className="mb-4 w-full rounded-2xl border border-primary-blue/20 bg-primary-blue/10 px-4 py-3 text-sm font-bold text-primary-blue transition-colors hover:bg-primary-blue/15"
+        className="mb-4 w-full outline-none focus:outline-none rounded-2xl border border-primary-blue/20 bg-primary-blue/10 px-4 py-3 text-sm font-bold text-primary-blue transition-colors hover:bg-primary-blue/15"
       >
         {copy.stage1.retry}
       </button>
@@ -46,7 +46,7 @@ const RenderStage1 = ({ copy, mode, completedPages, totalPages, progress, estima
 
     <button
       onClick={() => void handleCancelCapture()}
-      className="mb-4 w-full rounded-2xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm font-bold text-red-600 transition-colors hover:bg-red-500/15 dark:text-red-400"
+      className="mb-4 w-full outline-none focus:outline-none rounded-2xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm font-bold text-red-600 transition-colors hover:bg-red-500/15 dark:text-red-400"
     >
       {lang === 'ko' ? '\uCEA1\uCC98 \uCDE8\uC18C' : 'Cancel Capture'}
     </button>

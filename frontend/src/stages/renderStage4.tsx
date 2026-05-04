@@ -221,7 +221,7 @@ const RenderStage4 = ({ copy, theme, isDraggingGlobal, setIsDraggingGlobal, drag
                           return next;
                         });
                       }}
-                      className="absolute top-2 right-2 z-20 p-1 bg-black/40 hover:bg-red-500 text-white rounded-full transition-colors"
+                      className="absolute top-2 right-2 z-20 p-1 outline-none focus:outline-none bg-black/40 hover:bg-red-500 text-white rounded-full transition-colors"
                     >
                       <X size={12} />
                     </button>
@@ -256,12 +256,12 @@ const RenderStage4 = ({ copy, theme, isDraggingGlobal, setIsDraggingGlobal, drag
           onClick={() => {
             void handleSave();
           }}
-          className="clay-btn-primary py-3.5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="clay-btn-primary py-3.5 outline-none focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {isManualMergeSaving && <Loader2 size={18} className="animate-spin" />}
           {isManualMergeSaving ? (lang === 'ko' ? '\uBCD1\uD569 \uC911...' : 'Merging...') : copy.stage3.mergeAndSave}
         </button>
-        <button onClick={() => transitionTo(3)} className="text-text-secondary hover:text-text-primary text-sm font-medium transition-colors py-2">{copy.stage3.back}</button>
+        <button onClick={() => transitionTo(3)} className="text-text-secondary outline-none focus:outline-none hover:text-text-primary text-sm font-medium transition-colors py-2">{copy.stage3.back}</button>
       </div>
     </div>
   );

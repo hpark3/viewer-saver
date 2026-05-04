@@ -51,7 +51,7 @@ const GridViewModal = ({
             </div>
             <button 
               onClick={onClose}
-              className="w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-center transition-colors"
+              className="w-10 h-10 outline-none focus:outline-none rounded-full hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-center transition-colors"
             >
               <X size={24} />
             </button>

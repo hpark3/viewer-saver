@@ -53,7 +53,7 @@ const RenderStage6 = ({ copy, errorPages, recaptureIndex, progress, estimatedTim
     <div className="text-center pt-2">
       <button 
         onClick={handleManualUpload} 
-        className={`text-primary-blue hover:text-active-blue text-sm font-bold transition-all ${theme === 'pastel' ? 'text-contrast' : ''}`}
+        className={`text-primary-blue outline-none focus:outline-none hover:text-active-blue text-sm font-bold transition-all ${theme === 'pastel' ? 'text-contrast' : ''}`}
       >
         {copy.stage6.manualFallback}
       </button>

@@ -91,7 +91,7 @@ const RenderStage8 = ({ previewBlobUrl, totalPages, isPreviewLoading, previewErr
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsGridViewOpen(true)}
-              className="w-10 h-10 spatial-card !rounded-full flex items-center justify-center shadow-lg group bg-white dark:bg-bg-space-center border border-black/5 dark:border-white/10"
+              className="w-10 h-10 outline-none focus:outline-none spatial-card !rounded-full flex items-center justify-center shadow-lg group bg-white dark:bg-bg-space-center border border-black/5 dark:border-white/10"
             >
               <LayoutGrid size={18} className="text-primary-blue" />
             </motion.button>
@@ -145,7 +145,7 @@ const RenderStage8 = ({ previewBlobUrl, totalPages, isPreviewLoading, previewErr
             </div>
             <button
               onClick={() => transitionTo(7)}
-              className="px-5 py-3 clay-btn text-primary-blue text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm"
+              className="px-5 py-3 outline-none focus:outline-none clay-btn text-primary-blue text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm"
             >
               <ArrowLeft size={18} /> {copy.stage7.preview}
             </button>
@@ -170,7 +170,7 @@ const RenderStage8 = ({ previewBlobUrl, totalPages, isPreviewLoading, previewErr
                     href={previewBlobUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="clay-btn-yellow flex w-full items-center justify-center gap-2 py-4 text-base font-bold shadow-lg"
+                    className="clay-btn-yellow outline-none focus:outline-none flex w-full items-center justify-center gap-2 py-4 text-base font-bold shadow-lg"
                   >
                     <ExternalLink size={18} />
                     {openDocumentLabel}
@@ -198,7 +198,7 @@ const RenderStage8 = ({ previewBlobUrl, totalPages, isPreviewLoading, previewErr
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             onClick={() => transitionTo(5)}
-            className="w-full py-4 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:hover:bg-white/10 text-primary-blue border-2 border-primary-blue/30 rounded-2xl text-base font-bold transition-all flex items-center justify-center gap-2 shadow-sm"
+            className="w-full outline-none focus:outline-none py-4 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:hover:bg-white/10 text-primary-blue border-2 border-primary-blue/30 rounded-2xl text-base font-bold transition-all flex items-center justify-center gap-2 shadow-sm"
           >
             <ArrowLeft size={20} /> {copy.stage8.backToSuccess}
           </motion.button>
@@ -207,7 +207,7 @@ const RenderStage8 = ({ previewBlobUrl, totalPages, isPreviewLoading, previewErr
         {!previewError && (
           <button
             onClick={handleFinalSave}
-            className="clay-btn-yellow w-full py-4 flex items-center justify-center gap-2 text-base font-bold shadow-lg"
+            className="clay-btn-yellow outline-none focus:outline-none w-full py-4 flex items-center justify-center gap-2 text-base font-bold shadow-lg"
           >
             <Save size={20} /> {copy.stage8.save}
           </button>
@@ -215,7 +215,7 @@ const RenderStage8 = ({ previewBlobUrl, totalPages, isPreviewLoading, previewErr
 
         <button
           onClick={() => transitionTo(2)}
-          className="w-full py-3 text-text-secondary hover:text-text-primary text-sm font-medium transition-colors"
+          className="w-full outline-none focus:outline-none py-3 text-text-secondary hover:text-text-primary text-sm font-medium transition-colors"
         >
           {copy.stage8.backToReview}
         </button>

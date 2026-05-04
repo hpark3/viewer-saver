@@ -40,13 +40,13 @@ const CustomModal = ({
           <div className="flex gap-3">
             <button 
               onClick={onClose}
-              className="flex-1 py-3.5 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-text-secondary font-bold rounded-2xl transition-all border border-black/5 dark:border-white/10"
+              className="flex-1 py-3.5 outline-none focus:outline-none bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-text-secondary font-bold rounded-2xl transition-all border border-black/5 dark:border-white/10"
             >
               {cancelText}
             </button>
             <button 
               onClick={() => { onConfirm(); onClose(); }}
-              className="flex-1 py-3.5 clay-btn-primary shadow-lg rounded-2xl"
+              className="flex-1 py-3.5 outline-none focus:outline-none clay-btn-primary shadow-lg rounded-2xl"
             >
               {confirmText}
             </button>
