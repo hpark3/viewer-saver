@@ -15,7 +15,7 @@
   <a href="#quick-start"><img src="https://img.shields.io/badge/build-passing-22c55e" alt="Build"></a>
   <a href="#requirements"><img src="https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python"></a>
   <a href="#license"><img src="https://img.shields.io/badge/license-AGPL--3.0-black" alt="License"></a>
-  <a href="https://snapdoc-demo.vercel.app"><img src="https://img.shields.io/badge/demo-live-0ea5e9" alt="Demo"></a>
+  <a href="https://viewer-saver.vercel.app"><img src="https://img.shields.io/badge/demo-live-0ea5e9" alt="Demo"></a>
 </p>
 
 <p align="center">
@@ -34,8 +34,10 @@ Current limits:
 
 ## Live Demo
 
-- Try it online: [https://snapdoc-demo.vercel.app](https://snapdoc-demo.vercel.app)
+- Try it online: [https://viewer-saver.vercel.app](https://viewer-saver.vercel.app)
 - Repository: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
+
+> `snapdoc-demo.vercel.app` redirects here automatically — existing bookmarks and links will continue to work.
 
 ## How It Works
 
@@ -43,9 +45,9 @@ Current limits:
 2. The app surfaces preview and error-review steps so you can check failed or suspicious pages.
 3. Final output is assembled into a PDF for download after review or replacement.
 
-![readme-1](frontend/src/assets/demo-previews/readme-1.mp4)
+[readme-1.mp4](https://github.com/user-attachments/assets/22a3f124-8ef4-4e7e-ad17-97063a838348)
 
-![readme-2](frontend/src/assets/demo-previews/readme-2.mp4)
+[readme-2.mp4](https://github.com/user-attachments/assets/07f61f91-fe7c-4b81-a4f4-a9ba1d087a94)
 
 <br>
 
