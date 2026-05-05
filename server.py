@@ -393,6 +393,13 @@ def cleanup_stale_output_on_startup():
     cleanup_output_directories_for_new_run()
     reset_output_references()
 
+
+@app.on_event("shutdown")
+def cleanup_stale_output_on_shutdown():
+    cleanup_output_directories_for_new_run()
+    reset_output_references()
+
+
 def clear_manual_capture_temp_pngs() -> tuple[int, int]:
     """Remove only manual-upload temp PNG files before automatic recapture."""
     TEMP_DIR.mkdir(parents=True, exist_ok=True)

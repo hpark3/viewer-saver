@@ -37,7 +37,7 @@ Current limits:
 - Try it online: [https://viewer-saver.vercel.app](https://viewer-saver.vercel.app)
 - Repository: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
 
-> `snapdoc-demo.vercel.app` redirects here automatically — existing bookmarks and links will continue to work.
+> `snapdoc-demo.vercel.app` redirects here automatically. Old bookmarks still work.
 
 ## How It Works
 
@@ -229,6 +229,12 @@ Frontend hot reload and contributor-focused local development notes live in [.gi
 3. Choose Fast or Quality mode.
 4. Review detected error pages after capture.
 5. Re-capture or upload fixes, then save the final PDF.
+
+## Temporary Files
+
+ViewerSaver automatically cleans temporary files in `output/temp/` and `output/previews/` when the server starts and when it shuts down.
+
+If you keep the server running for a long session, you may still want to clear those folders manually from time to time.
 
 ## Documentation
 

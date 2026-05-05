@@ -37,7 +37,7 @@ ViewerSaver는 Canva, 슬라이드 뷰어처럼 브라우저 안에서만 접근
 - Try it online: [https://viewer-saver.vercel.app](https://viewer-saver.vercel.app)
 - 저장소: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
 
-> 기존 `snapdoc-demo.vercel.app` 링크는 자동으로 이 주소로 연결됩니다 — 저장해둔 링크나 북마크는 그대로 사용할 수 있습니다.
+> 기존 `snapdoc-demo.vercel.app` 링크는 자동으로 이 주소로 연결됩니다. 저장해둔 북마크는 그대로 사용할 수 있습니다.
 - 참고: 배포된 데모는 mocked response 기반 UI 미리보기용입니다.
 
 ## 동작 방식
@@ -230,6 +230,12 @@ python3 server.py
 3. Fast 또는 Quality 모드를 선택합니다.
 4. 캡처 후 감지된 오류 페이지를 검토합니다.
 5. 재캡처 또는 수정본 업로드 후 최종 PDF를 저장합니다.
+
+## 임시 파일
+
+ViewerSaver는 서버가 시작될 때와 종료될 때 `output/temp/` 및 `output/previews/`의 임시 파일을 자동으로 정리합니다.
+
+서버를 오랫동안 계속 실행하는 경우에는 이 폴더들을 가끔 수동으로 정리해 주는 것이 좋습니다.
 
 ## 문서 안내
 
