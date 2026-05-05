@@ -247,9 +247,9 @@ ViewerSaver는 서버가 시작될 때와 종료될 때 `output/temp/` 및 `outp
 
 ViewerSaver는 더 편리한 문서 보존 경험을 위해 아래 기능들을 준비하고 있습니다.
 
-- [ ] **스크린샷 직접 업로드 ([#4](https://github.com/hpark3/viewer-saver/issues/4))**: 이미 찍어둔 이미지들을 순서대로 묶어 PDF로 병합하는 기능
-- [ ] **데스크탑 네이티브 알림 ([#5](https://github.com/hpark3/viewer-saver/issues/5))**: 대용량 문서 캡처 완료 시 OS 알림으로 즉시 확인
-- [ ] **고급 PDF 병합 도구 ([#6](https://github.com/hpark3/viewer-saver/issues/6))**: 이미 생성된 여러 개의 PDF 파일을 하나로 합치는 기능
+- [ ] **스크린샷 직접 업로드 ([#13](https://github.com/hpark3/viewer-saver/issues/13))**: 이미 찍어둔 이미지들을 순서대로 묶어 PDF로 병합하는 기능
+- [ ] **데스크탑 네이티브 알림 ([#14](https://github.com/hpark3/viewer-saver/issues/14))**: 대용량 문서 캡처 완료 시 OS 알림으로 즉시 확인
+- [ ] **고급 PDF 병합 도구 ([#15](https://github.com/hpark3/viewer-saver/issues/15))**: 이미 생성된 여러 개의 PDF 파일을 하나로 합치는 기능
 
 ## 기여 및 지원
 

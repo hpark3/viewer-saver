@@ -246,9 +246,9 @@ If you keep the server running for a long session, you may still want to clear t
 
 We are working on several features to improve the document preservation experience:
 
-- [ ] **Manual Screenshot Upload ([#4](https://github.com/hpark3/viewer-saver/issues/4))**: Merge your existing screenshots or images into a single PDF.
-- [ ] **Desktop OS Notifications ([#5](https://github.com/hpark3/viewer-saver/issues/5))**: Get notified when a long capture session is complete or has failed.
-- [ ] **Advanced PDF Merger ([#6](https://github.com/hpark3/viewer-saver/issues/6))**: Merge multiple existing PDF files into one.
+- [ ] **Manual Screenshot Upload ([#13](https://github.com/hpark3/viewer-saver/issues/13))**: Merge your existing screenshots or images into a single PDF.
+- [ ] **Desktop OS Notifications ([#14](https://github.com/hpark3/viewer-saver/issues/14))**: Get notified when a long capture session is complete or has failed.
+- [ ] **Advanced PDF Merger ([#15](https://github.com/hpark3/viewer-saver/issues/15))**: Merge multiple existing PDF files into one.
 
 ## Contributing & Support
 
