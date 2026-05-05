@@ -37,7 +37,7 @@ Current limits:
 - Try it online: [https://viewer-saver.vercel.app](https://viewer-saver.vercel.app)
 - Repository: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
 
-> `snapdoc-demo.vercel.app` redirects here automatically. Old bookmarks still work.
+> `snapdoc-demo.vercel.app` redirects here automatically. Existing bookmarks and links will continue to work.
 
 ## How It Works
 
