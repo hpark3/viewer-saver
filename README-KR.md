@@ -37,7 +37,7 @@ ViewerSaver는 Canva, 슬라이드 뷰어처럼 브라우저 안에서만 접근
 - Try it online: [https://viewer-saver.vercel.app](https://viewer-saver.vercel.app)
 - 저장소: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
 
-> 기존 `snapdoc-demo.vercel.app` 링크는 자동으로 이 주소로 연결됩니다. 저장해둔 링크나 북마크는 그대로 사용할 수 있습니다.
+> 기존 `snapdoc-demo.vercel.app` 링크는 자동으로 이 주소로 연결됩니다. 저장해둔 북마크는 그대로 사용할 수 있습니다.
 - 참고: 배포된 데모는 mocked response 기반 UI 미리보기용입니다.
 
 ## 동작 방식
@@ -46,9 +46,9 @@ ViewerSaver는 Canva, 슬라이드 뷰어처럼 브라우저 안에서만 접근
 2. 페이지를 캡처한 뒤 미리보기와 오류 검토 단계를 통해 문제가 있는 페이지를 확인합니다.
 3. 검토 또는 교체가 끝난 결과를 최종 PDF로 묶어 저장합니다.
 
-[readme-1.mp4](https://github.com/user-attachments/assets/f6fb8c35-ff10-4d29-9311-37f9c3728802)
+[readme-1.webm](https://github.com/user-attachments/assets/5aecbed8-7cfb-49fd-9efd-f4a23380a2f0)
 
-[readme-2.mp4](https://github.com/user-attachments/assets/8c411f89-768d-4e38-ba68-1ef8daf7ce8d)
+[readme-2.webm](https://github.com/user-attachments/assets/2214ba6f-6fa3-41fe-b7e3-9dd2f11e2bc5)
 
 <br>
 
@@ -242,6 +242,14 @@ ViewerSaver는 서버가 시작될 때와 종료될 때 `output/temp/` 및 `outp
 - [README.md](README.md) - 영어 기본 안내 문서입니다.
 - [.github/CONTRIBUTING-KR.md](.github/CONTRIBUTING-KR.md) - 한국어 기여 가이드입니다.
 - [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) - 영어 기여 가이드와 로컬 개발 안내입니다.
+
+## 로드맵 (Roadmap)
+
+ViewerSaver는 더 편리한 문서 보존 경험을 위해 아래 기능들을 준비하고 있습니다.
+
+- [ ] **스크린샷 직접 업로드 ([#4](https://github.com/hpark3/viewer-saver/issues/4))**: 이미 찍어둔 이미지들을 순서대로 묶어 PDF로 병합하는 기능
+- [ ] **데스크탑 네이티브 알림 ([#5](https://github.com/hpark3/viewer-saver/issues/5))**: 대용량 문서 캡처 완료 시 OS 알림으로 즉시 확인
+- [ ] **고급 PDF 병합 도구 ([#6](https://github.com/hpark3/viewer-saver/issues/6))**: 이미 생성된 여러 개의 PDF 파일을 하나로 합치는 기능
 
 ## 기여 및 지원
 
