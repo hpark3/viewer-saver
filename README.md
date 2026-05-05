@@ -37,7 +37,7 @@ Current limits:
 - Try it online: [https://viewer-saver.vercel.app](https://viewer-saver.vercel.app)
 - Repository: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
 
-> `snapdoc-demo.vercel.app` redirects here automatically. Existing bookmarks and links will continue to work.
+> `snapdoc-demo.vercel.app` redirects here automatically. Old bookmarks still work.
 
 ## How It Works
 
@@ -241,6 +241,14 @@ If you keep the server running for a long session, you may still want to clear t
 - [README-KR.md](README-KR.md) - Korean guide for local setup and usage.
 - [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) - Contribution workflow and local development notes.
 - [.github/CONTRIBUTING-KR.md](.github/CONTRIBUTING-KR.md) - Korean contribution guide.
+
+## Roadmap
+
+We are working on several features to improve the document preservation experience:
+
+- [ ] **Manual Screenshot Upload ([#4](https://github.com/hpark3/viewer-saver/issues/4))**: Merge your existing screenshots or images into a single PDF.
+- [ ] **Desktop OS Notifications ([#5](https://github.com/hpark3/viewer-saver/issues/5))**: Get notified when a long capture session is complete or has failed.
+- [ ] **Advanced PDF Merger ([#6](https://github.com/hpark3/viewer-saver/issues/6))**: Merge multiple existing PDF files into one.
 
 ## Contributing & Support
 

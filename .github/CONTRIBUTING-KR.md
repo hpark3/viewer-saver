@@ -2,6 +2,10 @@
 
 ## 🗺️ 기여 우선순위 로드맵
 
+
+> [!TIP]
+> 구체적인 기능 로드맵과 진행 상황은 [README.md 로드맵](https://github.com/hpark3/viewer-saver#roadmap) 및 [GitHub Roadmap Issues](https://github.com/hpark3/viewer-saver/issues?q=is%3Aopen+is%3Aissue+label%3Aroadmap)에서 확인하실 수 있습니다.
+
 | 우선순위 | 분야 | 설명 | 난이도 | 비고 |
 |---------|------|------|--------|------|
 | 🔥 High | 버그 수정 | Canva / Google Slides 등 특정 URL에서 캡처 실패 또는 오류 페이지 과다 감지 | Medium | 재현 케이스(URL + 증상)를 Issue에 남겨주세요 |

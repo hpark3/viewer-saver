@@ -2,6 +2,10 @@ English | [한국어 CONTRIBUTING](CONTRIBUTING-KR.md)
 
 ## 🗺️ Contribution Priorities
 
+
+> [!TIP]
+> For a list of specific feature goals and their progress, please see the [README Roadmap](https://github.com/hpark3/viewer-saver#roadmap) and the [GitHub Roadmap Issues](https://github.com/hpark3/viewer-saver/issues?q=is%3Aopen+is%3Aissue+label%3Aroadmap).
+
 | Priority | Area | What Helps Most | Difficulty | Notes |
 |----------|------|-----------------|------------|-------|
 | High | Capture bugs | Fixing failed captures or error-page detection for Canva, Google Slides, and similar viewers | Medium | Include a reproducible URL pattern and screenshots when possible |
