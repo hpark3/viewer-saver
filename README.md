@@ -230,6 +230,12 @@ Frontend hot reload and contributor-focused local development notes live in [.gi
 4. Review detected error pages after capture.
 5. Re-capture or upload fixes, then save the final PDF.
 
+## Temporary Files
+
+ViewerSaver automatically cleans temporary files in `output/temp/` and `output/previews/` when the server starts and when it shuts down.
+
+If you keep the server running for a long session, you may still want to clear those folders manually from time to time.
+
 ## Documentation
 
 - [README-KR.md](README-KR.md) - Korean guide for local setup and usage.
