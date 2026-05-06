@@ -2,6 +2,7 @@ import os
 import re
 import sys
 import time
+from pathlib import Path
 
 from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
@@ -10,12 +11,16 @@ from pypdf import PdfWriter
 if sys.stdout.encoding != 'utf-8':
     sys.stdout.reconfigure(encoding='utf-8')
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+ROOT_DIR = BASE_DIR.parent if BASE_DIR.name == "backend" else BASE_DIR
+
+load_dotenv(ROOT_DIR / ".env")
 
 TARGET_URL = os.getenv("TARGET_URL")
-OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
-TEMP_DIR = os.path.join(OUTPUT_DIR, "temp")
-FINAL_OUTPUT_PATH = os.path.join(OUTPUT_DIR, "working_document.pdf")
+OUTPUT_DIR = ROOT_DIR / "output"
+FRONTEND_DIST_DIR = ROOT_DIR / "frontend" / "dist"
+TEMP_DIR = OUTPUT_DIR / "temp"
+FINAL_OUTPUT_PATH = OUTPUT_DIR / "working_document.pdf"
 
 
 def detect_total_pages(page):
@@ -49,8 +54,8 @@ def hide_viewer_ui(page):
 
 
 def export_clean_document_pdf():
-    os.makedirs(TEMP_DIR, exist_ok=True)
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    TEMP_DIR.mkdir(parents=True, exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=True)
@@ -76,19 +81,19 @@ def export_clean_document_pdf():
             hide_viewer_ui(page)
             time.sleep(3)
 
-            temp_pdf_path = os.path.join(TEMP_DIR, f"temp_page_{current_page}.pdf")
-            if os.path.exists(temp_pdf_path):
-                os.remove(temp_pdf_path)
+            temp_pdf_path = TEMP_DIR / f"temp_page_{current_page}.pdf"
+            if temp_pdf_path.exists():
+                temp_pdf_path.unlink()
 
-            page.pdf(path=temp_pdf_path, width="1920px", height="1080px", print_background=True)
-            pdf_writer.append(temp_pdf_path)
+            page.pdf(path=str(temp_pdf_path), width="1920px", height="1080px", print_background=True)
+            pdf_writer.append(str(temp_pdf_path))
 
             if current_page < total_pages:
                 page.keyboard.press("ArrowRight")
                 time.sleep(2.5)
 
         print(f"Writing merged PDF to {FINAL_OUTPUT_PATH}")
-        with open(FINAL_OUTPUT_PATH, "wb") as output_file:
+        with FINAL_OUTPUT_PATH.open("wb") as output_file:
             pdf_writer.write(output_file)
 
         browser.close()

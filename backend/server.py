@@ -23,12 +23,14 @@ from pypdf import PdfReader
 import sentry_sdk
 from sse_starlette.sse import EventSourceResponse
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+ROOT_DIR = BASE_DIR.parent if BASE_DIR.name == "backend" else BASE_DIR
+
+load_dotenv(ROOT_DIR / ".env")
 sentry_sdk.init(dsn=os.getenv("SENTRY_DSN", ""))
 
-BASE_DIR = Path(__file__).parent
-FRONTEND_DIST_DIR = BASE_DIR / "frontend" / "dist"
-OUTPUT_DIR = BASE_DIR / "output"
+FRONTEND_DIST_DIR = ROOT_DIR / "frontend" / "dist"
+OUTPUT_DIR = ROOT_DIR / "output"
 TEMP_DIR = OUTPUT_DIR / "temp"
 PREVIEW_DIR = OUTPUT_DIR / "previews"
 WORKING_PDF_NAME = "working_document.pdf"
@@ -36,7 +38,7 @@ DEFAULT_POPPLER_BIN_CANDIDATES = [
     r"C:\poppler\Library\bin",
     r"C:\Program Files\poppler\Library\bin",
     r"C:\Program Files (x86)\poppler\Library\bin",
-    str(BASE_DIR / "poppler" / "Library" / "bin"),
+    str(ROOT_DIR / "poppler" / "Library" / "bin"),
 ]
 CAPTURED_PAGE_PATTERN = re.compile(r"Captured page\s+(\d+)\s+of\s+(\d+)", re.IGNORECASE)
 TOTAL_PAGES_PATTERN = re.compile(r"Detected total pages:\s*(\d+)", re.IGNORECASE)
@@ -571,7 +573,7 @@ def run(body: RunRequest):
                 text=True,
                 encoding="utf-8",
                 errors="replace",
-                cwd=str(BASE_DIR),
+                cwd=str(ROOT_DIR),
             )
             current_proc = proc
             for line in proc.stdout or []:
@@ -615,7 +617,7 @@ def run(body: RunRequest):
                     text=True,
                     encoding="utf-8",
                     errors="replace",
-                    cwd=str(BASE_DIR),
+                    cwd=str(ROOT_DIR),
                 )
                 current_proc = proc2
                 for line in proc2.stdout or []:
@@ -736,7 +738,7 @@ def recapture(body: RecaptureRequest):
                 text=True,
                 encoding="utf-8",
                 errors="replace",
-                cwd=str(BASE_DIR),
+                cwd=str(ROOT_DIR),
             )
             current_proc = proc
             for line in proc.stdout or []:

@@ -2,6 +2,7 @@ import os
 import re
 import sys
 import time
+from pathlib import Path
 from typing import Optional, Tuple
 
 from dotenv import load_dotenv
@@ -12,19 +13,23 @@ from pypdf import PdfReader, PdfWriter
 if sys.stdout.encoding != 'utf-8':
     sys.stdout.reconfigure(encoding='utf-8')
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+ROOT_DIR = BASE_DIR.parent if BASE_DIR.name == "backend" else BASE_DIR
+
+load_dotenv(ROOT_DIR / ".env")
 
 TARGET_URL = os.getenv("TARGET_URL")
 SOURCE_PDF_PATH = os.getenv("SOURCE_PDF_PATH")
-OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
-TEMP_DIR = os.path.join(OUTPUT_DIR, "temp")
+OUTPUT_DIR = ROOT_DIR / "output"
+FRONTEND_DIST_DIR = ROOT_DIR / "frontend" / "dist"
+TEMP_DIR = OUTPUT_DIR / "temp"
 PAGE_COUNTER_PATTERN = re.compile(r"(\d+)\s*/\s*(\d+)")
 INITIAL_READY_TIMEOUT_SECONDS = 8.0
 INITIAL_READY_POLL_SECONDS = 0.4
 PAGE_NAVIGATION_TIMEOUT_SECONDS = 1.4
 PAGE_NAVIGATION_POLL_SECONDS = 0.12
 CAPTURE_SETTLE_SECONDS = 1.0
-FINAL_OUTPUT_PATH = os.path.join(OUTPUT_DIR, "working_document.pdf")
+FINAL_OUTPUT_PATH = OUTPUT_DIR / "working_document.pdf"
 
 
 def parse_recapture_pages():
@@ -105,11 +110,11 @@ def capture_page_pdf(page, current_page):
     hide_viewer_ui(page)
     time.sleep(CAPTURE_SETTLE_SECONDS)
 
-    temp_pdf_path = os.path.join(TEMP_DIR, f"temp_page_{current_page}.pdf")
-    if os.path.exists(temp_pdf_path):
-        os.remove(temp_pdf_path)
+    temp_pdf_path = TEMP_DIR / f"temp_page_{current_page}.pdf"
+    if temp_pdf_path.exists():
+        temp_pdf_path.unlink()
 
-    page.pdf(path=temp_pdf_path, width="1920px", height="1080px", print_background=True)
+    page.pdf(path=str(temp_pdf_path), width="1920px", height="1080px", print_background=True)
     return temp_pdf_path
 
 
@@ -123,15 +128,16 @@ def append_pdf_page(pdf_writer, pdf_path):
 def export_recaptured_document_pdf():
     if not TARGET_URL:
         raise RuntimeError("TARGET_URL is required.")
-    if not SOURCE_PDF_PATH or not os.path.exists(SOURCE_PDF_PATH):
+    source_pdf_path = Path(SOURCE_PDF_PATH) if SOURCE_PDF_PATH else None
+    if source_pdf_path is None or not source_pdf_path.exists():
         raise RuntimeError("SOURCE_PDF_PATH is required for recapture.")
 
     recapture_pages = parse_recapture_pages()
     if not recapture_pages:
         raise RuntimeError("RECAPTURE_PAGES is required for recapture.")
 
-    os.makedirs(TEMP_DIR, exist_ok=True)
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    TEMP_DIR.mkdir(parents=True, exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=True)
@@ -148,7 +154,7 @@ def export_recaptured_document_pdf():
         total_pages = detect_total_pages(page)
         print(f"Detected total pages: {total_pages}")
 
-        base_reader = PdfReader(SOURCE_PDF_PATH)
+        base_reader = PdfReader(str(source_pdf_path))
         if len(base_reader.pages) != total_pages:
             raise RuntimeError(
                 f"Base PDF page count mismatch: source={len(base_reader.pages)}, captured={total_pages}"
@@ -175,7 +181,7 @@ def export_recaptured_document_pdf():
                 pdf_writer.add_page(base_reader.pages[page_number - 1])
 
         print(f"Writing merged PDF to {FINAL_OUTPUT_PATH}")
-        with open(FINAL_OUTPUT_PATH, "wb") as output_file:
+        with FINAL_OUTPUT_PATH.open("wb") as output_file:
             pdf_writer.write(output_file)
 
         browser.close()
