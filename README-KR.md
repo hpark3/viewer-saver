@@ -241,10 +241,11 @@ ViewerSaver는 서버가 시작될 때와 종료될 때 `output/temp/` 및 `outp
 
 ## 문서 안내
 
-- [README.md](README.md) - 영어 기본 안내 문서입니다.
-- [.github/CONTRIBUTING-KR.md](.github/CONTRIBUTING-KR.md) - 한국어 기여 가이드입니다.
-- [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) - 영어 기여 가이드와 로컬 개발 안내입니다.
-- [docs/branding/README.md](docs/branding/README.md) - 브랜드 가이드라인 및 소셜 공유 자산 안내입니다.
+- [README.md](README.md) - 영어 기본 안내 문서 (English README).
+- [.github/CONTRIBUTING-KR.md](.github/CONTRIBUTING-KR.md) - 한국어 기여 가이드.
+- [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) - 영어 기여 가이드 및 로컬 개발 안내.
+- [SECURITY.md](SECURITY.md) - 보안 정책 및 취약점 보고 절차.
+- [LICENSE](LICENSE) - AGPL-3.0 라이선스 상세.
 
 ## 로드맵 (Roadmap)
 
