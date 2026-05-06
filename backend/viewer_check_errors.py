@@ -4,19 +4,48 @@ if sys.stdout.encoding != "utf-8":
 
 import os
 import re
+import shutil
+from pathlib import Path
 
 import cv2
 import numpy as np
 from pdf2image import convert_from_path
 from dotenv import load_dotenv
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+ROOT_DIR = BASE_DIR.parent if BASE_DIR.name == "backend" else BASE_DIR
 
-POPPLER_BIN_PATH = r"C:\poppler\Library\bin"
-OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
+load_dotenv(ROOT_DIR / ".env")
+
+OUTPUT_DIR = ROOT_DIR / "output"
+FRONTEND_DIST_DIR = ROOT_DIR / "frontend" / "dist"
 PDF_FILE_NAME = os.getenv("PDF_FILE_NAME", "final_document_complete.pdf")
-PDF_PATH = os.path.join(OUTPUT_DIR, PDF_FILE_NAME)
+PDF_PATH = OUTPUT_DIR / PDF_FILE_NAME
 USE_PNG_DIR = os.getenv("USE_PNG_DIR")
+DEFAULT_POPPLER_BIN_CANDIDATES = [
+    os.getenv("POPPLER_BIN_PATH"),
+    r"C:\poppler\Library\bin",
+    r"C:\Program Files\poppler\Library\bin",
+    r"C:\Program Files (x86)\poppler\Library\bin",
+    str(ROOT_DIR / "poppler" / "Library" / "bin"),
+]
+
+
+def resolve_poppler_bin_path():
+    for candidate in DEFAULT_POPPLER_BIN_CANDIDATES:
+        if not candidate:
+            continue
+        poppler_dir = Path(candidate)
+        if (
+            poppler_dir.exists()
+            and poppler_dir.is_dir()
+            and (poppler_dir / "pdfinfo.exe").exists()
+            and (poppler_dir / "pdftoppm.exe").exists()
+        ):
+            return str(poppler_dir)
+    if shutil.which("pdfinfo") and shutil.which("pdftoppm"):
+        return None
+    return None
 
 
 def is_loading_error(img_array):
@@ -76,11 +105,11 @@ def iter_page_images(pdf_path, png_dir=None):
             yield page_num, cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         return
 
-    if not os.path.exists(pdf_path):
+    if not pdf_path.exists():
         return
 
     print(f"Checking [{PDF_FILE_NAME}] via PDF rendering...")
-    pages = convert_from_path(pdf_path, dpi=100, poppler_path=POPPLER_BIN_PATH)
+    pages = convert_from_path(str(pdf_path), dpi=100, poppler_path=resolve_poppler_bin_path())
     for i, page in enumerate(pages):
         yield i + 1, np.array(page)
 

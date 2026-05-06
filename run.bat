@@ -41,7 +41,7 @@ echo [SnapDoc] Starting local server on http://localhost:8000
 echo [SnapDoc] Open http://localhost:8000 in your browser after the server starts.
 echo [SnapDoc] Keep this window open while using the app.
 echo [SnapDoc] Closing this window will stop the local server.
-call py server.py
+call py backend/server.py
 exit /b %errorlevel%
 
 :resolve_poppler

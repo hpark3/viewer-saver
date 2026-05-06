@@ -178,7 +178,7 @@ cd frontend
 npm install
 npm run build
 cd ..
-py server.py
+py backend/server.py
 ```
 
 9. 브라우저에서 `http://localhost:8000`을 엽니다.
@@ -205,7 +205,7 @@ cd frontend
 npm install
 npm run build
 cd ..
-py server.py
+py backend/server.py
 ```
 
 브라우저에서 `http://localhost:8000`을 엽니다.
@@ -218,7 +218,7 @@ cd viewer-saver
 python3 -m pip install -r requirements.txt
 python3 -m playwright install chromium
 cd frontend && npm install && npm run build && cd ..
-python3 server.py
+python3 backend/server.py
 ```
 
 브라우저에서 `http://localhost:8000`을 엽니다.
