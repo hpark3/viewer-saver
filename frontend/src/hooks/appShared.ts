@@ -70,7 +70,8 @@ export type WindowWithSavePicker = Window & {
   showSaveFilePicker?: (options?: unknown) => Promise<FileSystemFileHandle>;
 };
 
-const ENV = (import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env ?? {};
+const ENV: Record<string, string | undefined> =
+  (import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env ?? {};
 
 export const API_URL = ENV.VITE_API_URL ?? 'http://localhost:8000';
 export const REPO_URL = 'https://github.com/hpark3/viewer-saver';
