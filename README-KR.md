@@ -15,6 +15,8 @@
   <a href="#빠른-시작"><img src="https://img.shields.io/badge/build-passing-22c55e" alt="Build"></a>
   <a href="#요구-사항"><img src="https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python"></a>
   <a href="#라이선스"><img src="https://img.shields.io/badge/license-AGPL--3.0-black" alt="License"></a>
+  <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintained">
+  <a href=".github/CONTRIBUTING-KR.md"><img src="https://img.shields.io/badge/Contributions-welcome-brightgreen.svg?style=flat" alt="Contributions Welcome"></a>
   <a href="https://viewer-saver.vercel.app"><img src="https://img.shields.io/badge/demo-live-0ea5e9" alt="Demo"></a>
 </p>
 
@@ -242,6 +244,7 @@ ViewerSaver는 서버가 시작될 때와 종료될 때 `output/temp/` 및 `outp
 - [README.md](README.md) - 영어 기본 안내 문서입니다.
 - [.github/CONTRIBUTING-KR.md](.github/CONTRIBUTING-KR.md) - 한국어 기여 가이드입니다.
 - [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) - 영어 기여 가이드와 로컬 개발 안내입니다.
+- [docs/branding/README.md](docs/branding/README.md) - 브랜드 가이드라인 및 소셜 공유 자산 안내입니다.
 
 ## 로드맵 (Roadmap)
 

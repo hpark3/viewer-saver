@@ -15,6 +15,8 @@
   <a href="#quick-start"><img src="https://img.shields.io/badge/build-passing-22c55e" alt="Build"></a>
   <a href="#requirements"><img src="https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python"></a>
   <a href="#license"><img src="https://img.shields.io/badge/license-AGPL--3.0-black" alt="License"></a>
+  <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintained">
+  <a href=".github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-welcome-brightgreen.svg?style=flat" alt="Contributions Welcome"></a>
   <a href="https://viewer-saver.vercel.app"><img src="https://img.shields.io/badge/demo-live-0ea5e9" alt="Demo"></a>
 </p>
 
@@ -241,6 +243,7 @@ If you keep the server running for a long session, you may still want to clear t
 - [README-KR.md](README-KR.md) - Korean guide for local setup and usage.
 - [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) - Contribution workflow and local development notes.
 - [.github/CONTRIBUTING-KR.md](.github/CONTRIBUTING-KR.md) - Korean contribution guide.
+- [docs/branding/README.md](docs/branding/README.md) - Brand guidelines and social preview assets.
 
 ## Roadmap
 
