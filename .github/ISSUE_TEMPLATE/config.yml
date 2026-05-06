@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Which one should I choose?
+    url: https://github.com/hpark3/viewer-saver/issues/new/choose
+    about: If you are unsure, choose Feature request and describe the problem in plain language.
+  - name: New to GitHub?
+    url: https://github.com/hpark3/viewer-saver/blob/main/.github/CONTRIBUTING-KR.md
+    about: Start here if you are new to GitHub or unsure whether your issue is a bug report or a feature request.
