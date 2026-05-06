@@ -243,7 +243,8 @@ If you keep the server running for a long session, you may still want to clear t
 - [README-KR.md](README-KR.md) - Korean guide for local setup and usage.
 - [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) - Contribution workflow and local development notes.
 - [.github/CONTRIBUTING-KR.md](.github/CONTRIBUTING-KR.md) - Korean contribution guide.
-- [docs/branding/README.md](docs/branding/README.md) - Brand guidelines and social preview assets.
+- [SECURITY.md](SECURITY.md) - Security policy and vulnerability reporting.
+- [LICENSE](LICENSE) - AGPL-3.0 license details.
 
 ## Roadmap
 
