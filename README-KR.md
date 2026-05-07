@@ -12,6 +12,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/hpark3/viewer-saver/releases/latest"><img src="https://img.shields.io/github/v/release/hpark3/viewer-saver?include_prereleases&label=release&color=orange" alt="Release"></a>
   <a href="#빠른-시작"><img src="https://img.shields.io/badge/build-passing-22c55e" alt="Build"></a>
   <a href="#요구-사항"><img src="https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python"></a>
   <a href="#라이선스"><img src="https://img.shields.io/badge/license-AGPL--3.0-black" alt="License"></a>

@@ -671,6 +671,7 @@ export const useCaptureHandlers = ({
       } else {
         triggerBlobDownload(blob, 'viewer_export.pdf');
       }
+      addToast('success', messages[langRef.current].stage4.downloadStarted);
     } catch (error) {
       addToast('error', error instanceof Error ? error.message : getDownloadFailedMessage());
     } finally {
