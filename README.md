@@ -56,6 +56,7 @@ Current limits:
 
 ## Requirements
 
+- ~150 MB of free disk space (Playwright Chromium ~130 MB + Python packages)
 - Python 3.10+ recommended (`3.9` may fail on Windows dependency installs)
 - Node.js 18+
 - Playwright Chromium
