@@ -234,11 +234,32 @@ Frontend hot reload and contributor-focused local development notes live in [.gi
 4. Review detected error pages after capture.
 5. Re-capture or upload fixes, then save the final PDF.
 
+## Restarting the App
+
+After the first setup, you do not need to reinstall dependencies.
+
+**Windows:** Open `PowerShell` or `Command Prompt` in the `viewer-saver` folder and run:
+
+```powershell
+.\run.bat
+```
+
+Tip: In File Explorer, navigate to the folder, then `Shift` + `Right-click` → "**Open PowerShell window here**".
+
+**macOS / Linux:**
+
+```bash
+cd viewer-saver
+python3 backend/server.py
+```
+
+The app will be available at `http://localhost:8000`.
+
 ## Temporary Files
 
-ViewerSaver automatically cleans temporary files in `output/temp/` and `output/previews/` when the server starts and when it shuts down.
+ViewerSaver automatically cleans temporary files in `output/temp/` and `output/previews/` on server startup and on graceful shutdown (`Ctrl+C` in terminal).
 
-If you keep the server running for a long session, you may still want to clear those folders manually from time to time.
+**Windows note:** Closing the terminal window directly (`X` button) is a force-kill and skips the shutdown cleanup. Files will be cleared automatically the next time you start the server. To clear manually, delete the contents of `output/temp/` and `output/previews/`.
 
 ## Documentation
 
@@ -255,6 +276,8 @@ We are working on several features to improve the document preservation experien
 - [ ] **Manual Screenshot Upload ([#13](https://github.com/hpark3/viewer-saver/issues/13))**: Merge your existing screenshots or images into a single PDF.
 - [ ] **Desktop OS Notifications ([#14](https://github.com/hpark3/viewer-saver/issues/14))**: Get notified when a long capture session is complete or has failed.
 - [ ] **Advanced PDF Merger ([#15](https://github.com/hpark3/viewer-saver/issues/15))**: Merge multiple existing PDF files into one.
+- [ ] **Output Folder Cleanup Button ([#30](https://github.com/hpark3/viewer-saver/issues/30))**: In-app button to clear temp and preview files without restarting the server.
+- [ ] **One-Click App Restart ([#31](https://github.com/hpark3/viewer-saver/issues/31))**: Desktop shortcut auto-creation on first run + in-app server-down detection screen.
 
 ## Contributing & Support
 

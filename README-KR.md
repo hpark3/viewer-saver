@@ -234,11 +234,32 @@ python3 backend/server.py
 4. 캡처 후 감지된 오류 페이지를 검토합니다.
 5. 재캡처 또는 수정본 업로드 후 최종 PDF를 저장합니다.
 
+## 앱 재시작
+
+처음 설치 이후에는 의존성을 다시 설치할 필요가 없습니다.
+
+**Windows:** `viewer-saver` 폴더에서 `PowerShell` 또는 `명령 프롬프트(Command Prompt)`를 열고 실행하세요:
+
+```powershell
+.\run.bat
+```
+
+팁: 파일 탐색기에서 해당 폴더를 열고, `Shift` + `우클릭` → "**여기서 PowerShell 창 열기**"를 선택하면 됩니다.
+
+**macOS / Linux:**
+
+```bash
+cd viewer-saver
+python3 backend/server.py
+```
+
+`http://localhost:8000`에서 앱을 사용할 수 있습니다.
+
 ## 임시 파일
 
-ViewerSaver는 서버가 시작될 때와 종료될 때 `output/temp/` 및 `output/previews/`의 임시 파일을 자동으로 정리합니다.
+ViewerSaver는 서버 시작 시, 그리고 터미널에서 `Ctrl+C`로 정상 종료할 때 `output/temp/` 및 `output/previews/`의 임시 파일을 자동으로 정리합니다.
 
-서버를 오랫동안 계속 실행하는 경우에는 이 폴더들을 가끔 수동으로 정리해 주는 것이 좋습니다.
+**Windows 참고:** 터미널 창을 `X` 버튼으로 닫으면 강제 종료로 처리되어 임시 파일이 즉시 삭제되지 않습니다. 다음번 서버 시작 시 자동으로 정리됩니다. 직접 정리하려면 `output/temp/`와 `output/previews/` 폴더 내 파일을 삭제해 주세요.
 
 ## 문서 안내
 
@@ -252,9 +273,11 @@ ViewerSaver는 서버가 시작될 때와 종료될 때 `output/temp/` 및 `outp
 
 ViewerSaver는 더 편리한 문서 보존 경험을 위해 아래 기능들을 준비하고 있습니다.
 
-- [ ] **스크린샷 직접 업로드 ([#13](https://github.com/hpark3/viewer-saver/issues/13))**: 이미 찍어둔 이미지들을 순서대로 묶어 PDF로 병합하는 기능
+- [ ] **수동 스크린샷 업로드 ([#13](https://github.com/hpark3/viewer-saver/issues/13))**: 이미 찍어둔 이미지들을 순서대로 묶어 PDF로 병합하는 기능
 - [ ] **데스크탑 네이티브 알림 ([#14](https://github.com/hpark3/viewer-saver/issues/14))**: 대용량 문서 캡처 완료 시 OS 알림으로 즉시 확인
 - [ ] **고급 PDF 병합 도구 ([#15](https://github.com/hpark3/viewer-saver/issues/15))**: 이미 생성된 여러 개의 PDF 파일을 하나로 합치는 기능
+- [ ] **임시 파일 정리 버튼 ([#30](https://github.com/hpark3/viewer-saver/issues/30))**: 서버 재시작 없이 앱 내에서 임시 및 미리보기 파일을 삭제하는 기능
+- [ ] **원클릭 앱 실행 ([#31](https://github.com/hpark3/viewer-saver/issues/31))**: 바탕화면 바로가기 자동 생성 및 서버 다운 감지 화면 추가
 
 ## 기여 및 지원
 
