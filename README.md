@@ -242,7 +242,6 @@ After the first setup, you do not need to reinstall dependencies.
 1. Open the `viewer-saver` folder in File Explorer.
 2. Double-click the `run.bat` file.
 3. Keep the terminal window open while using the app.
----
 
 ### macOS / Linux
 Open your terminal in the project folder and run:
