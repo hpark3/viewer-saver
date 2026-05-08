@@ -1,4 +1,4 @@
-[English CONTRIBUTING](CONTRIBUTING.md) | 한국어
+[English CONTRIBUTING](https://github.com/hpark3/viewer-saver/blob/main/.github/CONTRIBUTING.md) | 한국어
 
 ## 🗺️ 기여 우선순위 로드맵
 
@@ -148,3 +148,6 @@ npm run dev
 - `server.py`는 가능하면 얇은 API 레이어로 유지해 주세요.
 - 캡처 모듈 수정은 관련 파일 중심으로 작게 나누는 편이 좋습니다.
 - 버그 수정 PR에 대규모 정리 작업을 같이 섞지는 않는 편이 좋습니다.
+
+> [!IMPORTANT]
+> 기여 과정에서 궁금한 점이 있다면 언제든 **Discussions** 탭에서 물어봐 주세요. 기꺼이 도와드리겠습니다!
