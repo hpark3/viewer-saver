@@ -25,7 +25,7 @@
 
 ## Overview
 
-ViewerSaver saves browser-only documents such as Canva and slide viewers to PDF on your own machine.
+ViewerSaver saves browser-only documents such as Canva and slide viewers to PDF on your own machine. Real capture is designed around local Playwright execution, while the public demo is separated so you can preview the interface without exposing the full runtime.
 
 Current limits:
 
@@ -39,7 +39,8 @@ Current limits:
 - Repository: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
 - Latest public build: [Releases](https://github.com/hpark3/viewer-saver/releases)
 
-> `snapdoc-demo.vercel.app` redirects here automatically. Old bookmarks still work.
+> `snapdoc-demo.vercel.app` redirects here automatically. Old bookmarks will still work.
+- **Note**: The deployed demo is a `mocked-response` UI preview, not the full live capture runtime.
 
 ## How It Works
 
@@ -257,7 +258,7 @@ We are working on several features to improve the document preservation experien
 ## Contributing & Support
 
 We welcome contributions of all sizes, including bug fixes, documentation improvements, and small UX polish.
-Please start with [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) for local setup and contribution guidelines.
+Please start with the [.github/CONTRIBUTING.md](https://github.com/hpark3/viewer-saver/blob/main/.github/CONTRIBUTING.md) for local setup and contribution guidelines.
 
 Open a GitHub `Issue` for bugs, feature requests, or larger changes you want to discuss first.
 Open a `Pull Request` for focused fixes, documentation updates, or well-scoped improvements.

@@ -39,8 +39,8 @@ ViewerSaver는 Canva, 슬라이드 뷰어처럼 브라우저 안에서만 접근
 - 저장소: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
 - 최신 공개 배포본: [Releases](https://github.com/hpark3/viewer-saver/releases)
 
-> 기존 `snapdoc-demo.vercel.app` 링크는 자동으로 이 주소로 연결됩니다. 저장해둔 북마크는 그대로 사용할 수 있습니다.
-- 참고: 배포된 데모는 mocked response 기반 UI 미리보기용입니다.
+> 기존 `snapdoc-demo.vercel.app` 링크는 이 주소로 자동 리다이렉트됩니다. 기존에 저장해둔 북마크도 그대로 유효합니다.
+- **참고**: 배포된 데모는 `mocked response` 기반의 UI 미리보기용이며, 실제 캡처 런타임은 포함되어 있지 않습니다.
 
 ## 동작 방식
 
@@ -258,7 +258,7 @@ ViewerSaver는 더 편리한 문서 보존 경험을 위해 아래 기능들을 
 ## 기여 및 지원
 
 버그 수정, 문서 개선, 작은 UX 다듬기까지 어떤 크기의 기여든 환영합니다.
-로컬 실행 방법과 기여 절차는 [.github/CONTRIBUTING-KR.md](.github/CONTRIBUTING-KR.md)에서 먼저 확인해 주세요.
+로컬 실행 방법과 기여 절차는 [.github/CONTRIBUTING-KR.md](https://github.com/hpark3/viewer-saver/blob/main/.github/CONTRIBUTING-KR.md)에서 먼저 확인해 주세요.
 
 버그, 기능 요청, 또는 먼저 논의가 필요한 비교적 큰 변경은 GitHub `Issues`로 열어 주세요.
 범위가 명확한 수정, 문서 업데이트, 잘게 나뉜 개선은 바로 `Pull Request`로 보내 주셔도 좋습니다.

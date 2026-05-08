@@ -1,4 +1,4 @@
-English | [한국어 CONTRIBUTING](CONTRIBUTING-KR.md)
+English | [한국어 CONTRIBUTING](https://github.com/hpark3/viewer-saver/blob/main/.github/CONTRIBUTING-KR.md)
 
 ## 🗺️ Contribution Priorities
 
@@ -150,3 +150,6 @@ Helpful bug reports usually include:
 - Keep `server.py` as a thin API layer when possible.
 - Prefer isolated changes in the capture modules instead of mixing unrelated refactors.
 - Avoid sweeping cleanup in the same PR as a bug fix.
+
+> [!IMPORTANT]
+> If you are unsure about any part of the process, please don't hesitate to ask in the **Discussions** tab. We are here to help!
