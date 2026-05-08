@@ -13,11 +13,9 @@
 
 <p align="center">
   <a href="https://github.com/hpark3/viewer-saver/releases/latest"><img src="https://img.shields.io/github/v/release/hpark3/viewer-saver?include_prereleases&label=release&color=orange" alt="Release"></a>
-  <a href="#quick-start"><img src="https://img.shields.io/badge/build-passing-22c55e" alt="Build"></a>
   <a href="#requirements"><img src="https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python"></a>
   <a href="#license"><img src="https://img.shields.io/badge/license-AGPL--3.0-black" alt="License"></a>
-  <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintained">
-  <a href=".github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-welcome-brightgreen.svg?style=flat" alt="Contributions Welcome"></a>
+  <a href=".github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/contributions-welcome-22c55e" alt="Contributions Welcome"></a>
   <a href="https://viewer-saver.vercel.app"><img src="https://img.shields.io/badge/demo-live-0ea5e9" alt="Demo"></a>
 </p>
 
@@ -39,6 +37,7 @@ Current limits:
 
 - Try it online: [https://viewer-saver.vercel.app](https://viewer-saver.vercel.app)
 - Repository: [https://github.com/hpark3/viewer-saver](https://github.com/hpark3/viewer-saver)
+- Latest public build: [Releases](https://github.com/hpark3/viewer-saver/releases)
 
 > `snapdoc-demo.vercel.app` redirects here automatically. Old bookmarks still work.
 
