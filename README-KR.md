@@ -56,7 +56,7 @@ ViewerSaver는 Canva, 슬라이드 뷰어처럼 브라우저 안에서만 접근
 
 ## 요구 사항
 
-- 여유 디스크 공간 약 150 MB (Playwright Chromium ~130 MB + Python 패키지 포함)
+- **여유 디스크 공간**: 약 150 MB (`Playwright Chromium` ~130 MB + Python 패키지 포함)
 - Python 3.10+ 권장 (`3.9`는 Windows 의존성 설치에서 실패할 수 있습니다)
 - Node.js 18+
 - Playwright Chromium
