@@ -238,20 +238,31 @@ python3 backend/server.py
 
 처음 설치 이후에는 의존성을 다시 설치할 필요가 없습니다.
 
-**Windows:** `viewer-saver` 폴더에서 `PowerShell` 또는 `명령 프롬프트(Command Prompt)`를 열고 실행하세요:
+### Windows (가장 쉬운 방법)
+1. 파일 탐색기에서 `viewer-saver` 폴더로 이동합니다.
+2. `run.bat` 파일을 더블클릭합니다.
+3. 서버가 실행되는 동안 터미널 창을 닫지 마세요.
 
-```powershell
-.\run.bat
-```
+---
 
-팁: 파일 탐색기에서 해당 폴더를 열고, `Shift` + `우클릭` → "**여기서 PowerShell 창 열기**"를 선택하면 됩니다.
-
-**macOS / Linux:**
-
+### macOS / Linux
+터미널을 열고 프로젝트 폴더에서 아래 명령어를 실행하세요:
 ```bash
-cd viewer-saver
 python3 backend/server.py
 ```
+
+### 터미널에서 직접 실행 (Windows)
+명령어를 직접 입력하는 것이 더 편하시다면 아래 순서대로 진행하세요:
+
+1. **폴더로 이동**:
+   ```powershell
+   cd viewer-saver
+   ```
+2. **서버 실행**:
+   - **PowerShell** 사용 시: `.\run.bat`
+   - **명령 프롬프트(CMD)** 사용 시: `run.bat`
+
+> **팁**: 파일 탐색기에서 해당 폴더를 열고, `Shift` + `우클릭` → "**여기서 PowerShell 창 열기**"를 선택하면 폴더 이동 없이 바로 터미널을 열 수 있습니다.
 
 `http://localhost:8000`에서 앱을 사용할 수 있습니다.
 

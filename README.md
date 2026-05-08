@@ -238,20 +238,30 @@ Frontend hot reload and contributor-focused local development notes live in [.gi
 
 After the first setup, you do not need to reinstall dependencies.
 
-**Windows:** Open `PowerShell` or `Command Prompt` in the `viewer-saver` folder and run:
+### Windows (Easiest)
+1. Open the `viewer-saver` folder in File Explorer.
+2. Double-click the `run.bat` file.
+3. Keep the terminal window open while using the app.
+---
 
-```powershell
-.\run.bat
-```
-
-Tip: In File Explorer, navigate to the folder, then `Shift` + `Right-click` → "**Open PowerShell window here**".
-
-**macOS / Linux:**
-
+### macOS / Linux
+Open your terminal in the project folder and run:
 ```bash
-cd viewer-saver
 python3 backend/server.py
 ```
+
+### Advanced: Using the Terminal (Windows)
+If you prefer running commands manually, navigate to the project folder first:
+
+1. **Navigate to the folder**:
+   ```powershell
+   cd viewer-saver
+   ```
+2. **Run the server**:
+   - In **PowerShell**: `.\run.bat`
+   - In **Command Prompt (CMD)**: `run.bat`
+
+> **Tip**: In File Explorer, you can quickly open a terminal in the current folder by **Shift** + **Right-click** on any empty space → "**Open PowerShell window here**".
 
 The app will be available at `http://localhost:8000`.
 
